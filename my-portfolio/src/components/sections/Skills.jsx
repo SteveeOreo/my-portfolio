@@ -108,7 +108,7 @@ const Skills = () => {
       icon: Settings,
       description: "Modern development workflow and tools",
       skills: [
-        { name: "Git & GitHub", level: 90, color: "text-gray-700" },
+        { name: "Git & GitHub", level: 90, color: "text-gray-300" },
         { name: "Vite", level: 85, color: "text-yellow-500" },
         { name: "npm/yarn", level: 88, color: "text-red-600" },
         { name: "VS Code", level: 92, color: "text-blue-600" },
@@ -144,7 +144,7 @@ const Skills = () => {
   ];
 
   return (
-    <section id="skills" className="section-padding bg-white">
+    <section id="skills" className="section-padding bg-black">
       <motion.div
         className="section-container"
         variants={containerVariants}
@@ -158,7 +158,7 @@ const Skills = () => {
             Technical <span className="gradient-text">Expertise</span>
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-primary-600 to-earth-600 mx-auto mb-6"></div>
-          <p className="text-lg sm:text-xl text-neutral-600 max-w-3xl mx-auto">
+          <p className="text-lg sm:text-xl text-neutral-300 max-w-3xl mx-auto">
             A comprehensive toolkit for building modern, scalable applications with focus on
             user experience and agricultural technology solutions.
           </p>
@@ -174,12 +174,12 @@ const Skills = () => {
               whileHover="hover"
             >
               <div className="flex items-center mb-4">
-                <div className="p-3 bg-primary-100 rounded-lg mr-4">
+                <div className="p-3 bg-primary-900 rounded-lg mr-4">
                   <category.icon className="w-6 h-6 text-primary-600" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold text-neutral-900">{category.title}</h3>
-                  <p className="text-sm text-neutral-600">{category.description}</p>
+                  <h3 className="text-xl font-bold text-neutral-100">{category.title}</h3>
+                  <p className="text-sm text-neutral-300">{category.description}</p>
                 </div>
               </div>
 
@@ -188,9 +188,9 @@ const Skills = () => {
                   <div key={skillIndex}>
                     <div className="flex justify-between items-center mb-2">
                       <span className={`font-medium ${skill.color}`}>{skill.name}</span>
-                      <span className="text-sm text-neutral-500 font-medium">{skill.level}%</span>
+                      <span className="text-sm text-neutral-400 font-medium">{skill.level}%</span>
                     </div>
-                    <div className="h-2 bg-neutral-200 rounded-full overflow-hidden">
+                    <div className="h-2 bg-neutral-700 rounded-full overflow-hidden">
                       <motion.div
                         className={`h-full bg-gradient-to-r ${
                           skill.color.includes('blue') ? 'from-blue-500 to-blue-600' :
@@ -224,7 +224,7 @@ const Skills = () => {
             <h3 className="text-2xl sm:text-3xl font-bold mb-4">
               Core <span className="gradient-text">Values</span>
             </h3>
-            <p className="text-lg text-neutral-600 max-w-2xl mx-auto">
+            <p className="text-lg text-neutral-300 max-w-2xl mx-auto">
               The principles that guide my approach to development and collaboration
             </p>
           </div>
@@ -233,15 +233,15 @@ const Skills = () => {
             {coreValues.map((value, index) => (
               <motion.div
                 key={index}
-                className="text-center p-6 rounded-xl bg-gradient-to-b from-neutral-50 to-white border border-neutral-200 hover:border-primary-300 transition-all duration-300 hover:shadow-lg group"
+                className="text-center p-6 rounded-xl bg-gradient-to-b from-neutral-900 to-neutral-800 border border-neutral-700 hover:border-primary-500 transition-all duration-300 hover:shadow-lg group"
                 variants={skillCardVariants}
                 whileHover="hover"
               >
                 <div className={`inline-flex p-4 rounded-full bg-gradient-to-r ${value.gradient} mb-4 group-hover:scale-110 transition-transform duration-300`}>
                   <value.icon className="w-6 h-6 text-white" />
                 </div>
-                <h4 className="text-lg font-bold text-neutral-900 mb-2">{value.title}</h4>
-                <p className="text-sm text-neutral-600 leading-relaxed">{value.description}</p>
+                <h4 className="text-lg font-bold text-neutral-100 mb-2">{value.title}</h4>
+                <p className="text-sm text-neutral-300 leading-relaxed">{value.description}</p>
               </motion.div>
             ))}
           </div>
@@ -252,14 +252,14 @@ const Skills = () => {
           className="mt-20 text-center"
           variants={itemVariants}
         >
-          <div className="bg-gradient-to-r from-primary-50 to-earth-50 rounded-2xl p-8 border border-primary-100">
+          <div className="bg-gradient-to-r from-primary-900 to-earth-900 rounded-2xl p-8 border border-primary-700">
             <div className="text-4xl mb-4">♚</div>
-            <blockquote className="text-lg sm:text-xl text-neutral-700 italic mb-4 max-w-3xl mx-auto">
+            <blockquote className="text-lg sm:text-xl text-neutral-300 italic mb-4 max-w-3xl mx-auto">
               "In chess, as in coding, every move should have a purpose. I approach development
               with the same strategic mindset - analyzing the board, anticipating challenges,
               and executing solutions that create lasting impact."
             </blockquote>
-            <cite className="text-primary-600 font-semibold">— My Development Philosophy</cite>
+            <cite className="text-primary-400 font-semibold">— My Development Philosophy</cite>
           </div>
         </motion.div>
       </motion.div>

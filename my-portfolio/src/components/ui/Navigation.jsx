@@ -97,7 +97,7 @@ const Navigation = () => {
       <motion.nav
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
           scrolled
-            ? 'bg-white/95 backdrop-blur-md border-b border-neutral-200 shadow-sm'
+            ? 'bg-neutral-900/95 backdrop-blur-md border-b border-neutral-800 shadow-sm'
             : 'bg-transparent'
         }`}
         initial={{ y: -100 }}
@@ -113,7 +113,7 @@ const Navigation = () => {
                 e.preventDefault();
                 handleNavClick('#hero');
               }}
-              className="flex items-center space-x-2 text-xl font-bold text-neutral-900 hover:text-primary-600 transition-colors duration-300"
+              className="flex items-center space-x-2 text-xl font-bold text-neutral-100 hover:text-primary-500 transition-colors duration-300"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
@@ -131,12 +131,12 @@ const Navigation = () => {
                     e.preventDefault();
                     handleNavClick(item.href);
                   }}
-                  className={`relative font-medium transition-colors duration-300 hover:text-primary-600 ${
+                  className={`relative font-medium transition-colors duration-300 hover:text-primary-500 ${
                     activeSection === item.id
-                      ? 'text-primary-600'
+                      ? 'text-primary-500'
                       : scrolled
-                      ? 'text-neutral-700'
-                      : 'text-neutral-800'
+                      ? 'text-neutral-300'
+                      : 'text-neutral-200'
                   }`}
                   whileHover={{ y: -2 }}
                   transition={{ duration: 0.2 }}
@@ -169,15 +169,15 @@ const Navigation = () => {
 
             {/* Mobile Menu Button */}
             <motion.button
-              className="md:hidden p-2 rounded-lg hover:bg-neutral-100 transition-colors duration-300"
+              className="md:hidden p-2 rounded-lg hover:bg-neutral-800 transition-colors duration-300"
               onClick={() => setIsOpen(!isOpen)}
               whileTap={{ scale: 0.95 }}
               aria-label="Toggle menu"
             >
               {isOpen ? (
-                <X className="w-6 h-6 text-neutral-700" />
+                <X className="w-6 h-6 text-neutral-200" />
               ) : (
-                <Menu className="w-6 h-6 text-neutral-700" />
+                <Menu className="w-6 h-6 text-neutral-200" />
               )}
             </motion.button>
           </div>
@@ -199,7 +199,7 @@ const Navigation = () => {
 
             {/* Mobile Menu */}
             <motion.div
-              className="fixed top-0 right-0 bottom-0 z-50 w-80 max-w-[80vw] bg-white border-l border-neutral-200 shadow-2xl md:hidden"
+              className="fixed top-0 right-0 bottom-0 z-50 w-80 max-w-[80vw] bg-neutral-900 border-l border-neutral-800 shadow-2xl md:hidden"
               variants={menuVariants}
               initial="closed"
               animate="open"
@@ -210,13 +210,13 @@ const Navigation = () => {
                 <div className="flex items-center justify-between mb-8">
                   <div className="flex items-center space-x-2">
                     <Crown className="w-6 h-6 text-primary-600" />
-                    <span className="text-xl font-bold text-neutral-900">Stephen</span>
+                    <span className="text-xl font-bold text-neutral-100">Stephen</span>
                   </div>
                   <button
                     onClick={() => setIsOpen(false)}
-                    className="p-2 rounded-lg hover:bg-neutral-100 transition-colors duration-300"
+                    className="p-2 rounded-lg hover:bg-neutral-800 transition-colors duration-300"
                   >
-                    <X className="w-6 h-6 text-neutral-700" />
+                    <X className="w-6 h-6 text-neutral-200" />
                   </button>
                 </div>
 
@@ -230,10 +230,10 @@ const Navigation = () => {
                         e.preventDefault();
                         handleNavClick(item.href);
                       }}
-                      className={`block text-lg font-medium transition-colors duration-300 hover:text-primary-600 ${
+                      className={`block text-lg font-medium transition-colors duration-300 hover:text-primary-500 ${
                         activeSection === item.id
-                          ? 'text-primary-600'
-                          : 'text-neutral-700'
+                          ? 'text-primary-500'
+                          : 'text-neutral-300'
                       }`}
                       variants={navItemVariants}
                       custom={index}
@@ -247,7 +247,7 @@ const Navigation = () => {
 
                 {/* Mobile CTA */}
                 <motion.div
-                  className="mt-8 pt-6 border-t border-neutral-200"
+                  className="mt-8 pt-6 border-t border-neutral-800"
                   variants={navItemVariants}
                   custom={navItems.length}
                 >
@@ -265,12 +265,12 @@ const Navigation = () => {
 
                 {/* Chess Quote - Mobile */}
                 <motion.div
-                  className="mt-8 p-4 bg-gradient-to-r from-primary-50 to-earth-50 rounded-xl border border-primary-100"
+                  className="mt-8 p-4 bg-gradient-to-r from-neutral-800 to-neutral-900 rounded-xl border border-neutral-700"
                   variants={navItemVariants}
                   custom={navItems.length + 1}
                 >
                   <div className="text-2xl mb-2 text-center">♚</div>
-                  <p className="text-sm text-neutral-600 italic text-center">
+                  <p className="text-sm text-neutral-400 italic text-center">
                     "Every move should have a purpose."
                   </p>
                 </motion.div>

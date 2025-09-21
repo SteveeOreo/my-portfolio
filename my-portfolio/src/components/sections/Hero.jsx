@@ -49,9 +49,9 @@ const Hero = () => {
   };
 
   const socialLinks = [
-    { icon: Github, href: "https://github.com/yourusername", label: "GitHub" },
-    { icon: Linkedin, href: "https://linkedin.com/in/yourprofile", label: "LinkedIn" },
-    { icon: Mail, href: "mailto:your.email@example.com", label: "Email" },
+    { icon: Github, href: "https://github.com/SteveeOreo", label: "GitHub" },
+    { icon: Linkedin, href: "https://www.linkedin.com/in/stephen-ekwueme/", label: "LinkedIn" },
+    { icon: Mail, href: "mailto:stephen.ekwuemec@gmail.com", label: "Email" },
   ];
 
   return (
@@ -124,7 +124,7 @@ const Hero = () => {
         </motion.h1>
 
         <motion.h2
-          className="text-xl sm:text-2xl lg:text-3xl text-neutral-600 mb-8 font-medium"
+          className="text-xl sm:text-2xl lg:text-3xl text-neutral-300 mb-8 font-medium"
           variants={itemVariants}
         >
           Frontend Software Engineer
@@ -132,7 +132,7 @@ const Hero = () => {
 
         {/* Mission Statement */}
         <motion.p
-          className="text-lg sm:text-xl text-neutral-700 max-w-4xl mx-auto mb-12 leading-relaxed"
+          className="text-lg sm:text-xl text-neutral-300 max-w-4xl mx-auto mb-12 leading-relaxed"
           variants={itemVariants}
         >
           Passionate about solving problems through technology and creating{' '}
@@ -176,7 +176,7 @@ const Hero = () => {
               href={href}
               target="_blank"
               rel="noopener noreferrer"
-              className="p-3 rounded-full bg-white shadow-md border border-neutral-200 text-neutral-600 hover:text-primary-600 hover:border-primary-300 hover:shadow-lg transition-all duration-300"
+              className="p-3 rounded-full bg-neutral-800 shadow-md border border-neutral-700 text-neutral-300 hover:text-primary-500 hover:border-primary-400 hover:shadow-lg transition-all duration-300"
               whileHover={{ scale: 1.1, y: -2 }}
               whileTap={{ scale: 0.95 }}
               aria-label={label}
@@ -193,7 +193,7 @@ const Hero = () => {
           animate={{ y: [0, 10, 0] }}
           transition={{ duration: 2, repeat: Infinity }}
         >
-          <ChevronDown className="w-8 h-8 text-neutral-400" />
+          <ChevronDown className="w-8 h-8 text-neutral-300" />
         </motion.div>
       </motion.div>
 

@@ -115,8 +115,8 @@ const Contact = () => {
     {
       icon: Mail,
       title: "Email",
-      content: "stephen.ekwueme@example.com",
-      href: "mailto:stephen.ekwueme@example.com",
+      content: "stephen.ekwuemec@gmail.com",
+      href: "mailto:stephen.ekwuemec@gmail.com",
       color: "text-primary-600",
       bgColor: "bg-primary-50"
     },
@@ -142,25 +142,25 @@ const Contact = () => {
     {
       icon: Github,
       name: "GitHub",
-      href: "https://github.com/yourusername",
+      href: "https://github.com/SteveeOreo",
       color: "hover:bg-gray-600"
     },
     {
       icon: Linkedin,
       name: "LinkedIn",
-      href: "https://linkedin.com/in/yourprofile",
+      href: "https://www.linkedin.com/in/stephen-ekwueme/",
       color: "hover:bg-blue-600"
     },
     {
       icon: Twitter,
       name: "Twitter",
-      href: "https://twitter.com/yourusername",
+      href: "https://x.com/Steve__Oreo",
       color: "hover:bg-blue-400"
     }
   ];
 
   return (
-    <section id="contact" className="section-padding bg-gradient-to-b from-neutral-50 to-white">
+    <section id="contact" className="section-padding bg-gradient-to-b from-neutral-900 to-black">
       <motion.div
         className="section-container"
         variants={containerVariants}
@@ -174,7 +174,7 @@ const Contact = () => {
             Let's <span className="gradient-text">Connect</span>
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-primary-600 to-earth-600 mx-auto mb-6"></div>
-          <p className="text-lg sm:text-xl text-neutral-600 max-w-3xl mx-auto">
+          <p className="text-lg sm:text-xl text-neutral-300 max-w-3xl mx-auto">
             Ready to discuss your next project? Whether it's agriculture tech, e-commerce solutions,
             or innovative web applications, I'd love to hear your ideas and explore how we can work together.
           </p>
@@ -184,8 +184,8 @@ const Contact = () => {
           {/* Contact Information */}
           <motion.div className="space-y-8" variants={itemVariants}>
             <div>
-              <h3 className="text-2xl font-bold text-neutral-900 mb-6">Get In Touch</h3>
-              <p className="text-neutral-600 mb-8 leading-relaxed">
+              <h3 className="text-2xl font-bold text-neutral-100 mb-6">Get In Touch</h3>
+              <p className="text-neutral-300 mb-8 leading-relaxed">
                 I'm always excited to discuss new opportunities and challenges. Whether you're a
                 startup looking to build from scratch, an established company seeking to innovate,
                 or a fellow developer wanting to collaborate, let's start a conversation.
@@ -197,24 +197,24 @@ const Contact = () => {
               {contactInfo.map((info, index) => (
                 <motion.div
                   key={index}
-                  className="flex items-center space-x-4 p-4 bg-white rounded-xl border border-neutral-200 hover:border-primary-300 hover:shadow-lg transition-all duration-300"
+                  className="flex items-center space-x-4 p-4 bg-neutral-800 rounded-xl border border-neutral-700 hover:border-primary-500 hover:shadow-lg transition-all duration-300"
                   variants={cardVariants}
                   whileHover="hover"
                 >
-                  <div className={`${info.bgColor} p-3 rounded-lg`}>
+                  <div className={`bg-neutral-900 p-3 rounded-lg`}>
                     <info.icon className={`w-6 h-6 ${info.color}`} />
                   </div>
                   <div>
-                    <h4 className="font-semibold text-neutral-900">{info.title}</h4>
+                    <h4 className="font-semibold text-neutral-100">{info.title}</h4>
                     {info.href ? (
                       <a
                         href={info.href}
-                        className="text-neutral-600 hover:text-primary-600 transition-colors duration-300"
+                        className="text-neutral-300 hover:text-primary-400 transition-colors duration-300"
                       >
                         {info.content}
                       </a>
                     ) : (
-                      <p className="text-neutral-600">{info.content}</p>
+                      <p className="text-neutral-300">{info.content}</p>
                     )}
                   </div>
                 </motion.div>
@@ -223,7 +223,7 @@ const Contact = () => {
 
             {/* Social Links */}
             <div>
-              <h4 className="font-semibold text-neutral-900 mb-4">Follow My Work</h4>
+              <h4 className="font-semibold text-neutral-100 mb-4">Follow My Work</h4>
               <div className="flex space-x-4">
                 {socialLinks.map((social, index) => (
                   <motion.a
@@ -231,7 +231,7 @@ const Contact = () => {
                     href={social.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className={`p-3 bg-neutral-100 text-neutral-600 rounded-lg transition-all duration-300 ${social.color} hover:text-white hover:scale-110`}
+                    className={`p-3 bg-neutral-800 text-neutral-300 rounded-lg transition-all duration-300 ${social.color} hover:text-white hover:scale-110`}
                     whileHover={{ y: -2 }}
                     whileTap={{ scale: 0.95 }}
                     aria-label={social.name}
@@ -244,11 +244,11 @@ const Contact = () => {
 
             {/* Chess-themed Quote */}
             <motion.div
-              className="bg-gradient-to-r from-primary-50 to-earth-50 rounded-xl p-6 border border-primary-100"
+              className="bg-gradient-to-r from-primary-900 to-earth-900 rounded-xl p-6 border border-primary-700"
               variants={cardVariants}
             >
               <div className="text-2xl mb-3">♚</div>
-              <blockquote className="text-neutral-700 italic">
+              <blockquote className="text-neutral-300 italic">
                 "Every great project begins with a single move. Let's make yours a strategic one."
               </blockquote>
             </motion.div>
@@ -256,13 +256,13 @@ const Contact = () => {
 
           {/* Contact Form */}
           <motion.div variants={itemVariants}>
-            <div className="bg-white rounded-2xl p-8 border border-neutral-200 shadow-sm">
-              <h3 className="text-2xl font-bold text-neutral-900 mb-6">Send a Message</h3>
+            <div className="bg-neutral-800 rounded-2xl p-8 border border-neutral-700 shadow-sm">
+              <h3 className="text-2xl font-bold text-neutral-100 mb-6">Send a Message</h3>
 
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
-                    <label htmlFor="name" className="block text-sm font-medium text-neutral-700 mb-2">
+                    <label htmlFor="name" className="block text-sm font-medium text-neutral-300 mb-2">
                       Name *
                     </label>
                     <input
@@ -272,12 +272,12 @@ const Contact = () => {
                       value={formData.name}
                       onChange={handleInputChange}
                       required
-                      className="w-full px-4 py-3 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors duration-300"
+                      className="w-full px-4 py-3 border border-neutral-600 bg-neutral-700 text-neutral-100 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors duration-300"
                       placeholder="Your full name"
                     />
                   </div>
                   <div>
-                    <label htmlFor="email" className="block text-sm font-medium text-neutral-700 mb-2">
+                    <label htmlFor="email" className="block text-sm font-medium text-neutral-300 mb-2">
                       Email *
                     </label>
                     <input
@@ -287,14 +287,14 @@ const Contact = () => {
                       value={formData.email}
                       onChange={handleInputChange}
                       required
-                      className="w-full px-4 py-3 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors duration-300"
+                      className="w-full px-4 py-3 border border-neutral-600 bg-neutral-700 text-neutral-100 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors duration-300"
                       placeholder="your.email@example.com"
                     />
                   </div>
                 </div>
 
                 <div>
-                  <label htmlFor="subject" className="block text-sm font-medium text-neutral-700 mb-2">
+                  <label htmlFor="subject" className="block text-sm font-medium text-neutral-300 mb-2">
                     Subject *
                   </label>
                   <input
@@ -304,13 +304,13 @@ const Contact = () => {
                     value={formData.subject}
                     onChange={handleInputChange}
                     required
-                    className="w-full px-4 py-3 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors duration-300"
+                    className="w-full px-4 py-3 border border-neutral-600 bg-neutral-700 text-neutral-100 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors duration-300"
                     placeholder="Project inquiry, collaboration, etc."
                   />
                 </div>
 
                 <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-neutral-700 mb-2">
+                  <label htmlFor="message" className="block text-sm font-medium text-neutral-300 mb-2">
                     Message *
                   </label>
                   <textarea
@@ -320,7 +320,7 @@ const Contact = () => {
                     value={formData.message}
                     onChange={handleInputChange}
                     required
-                    className="w-full px-4 py-3 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors duration-300 resize-none"
+                    className="w-full px-4 py-3 border border-neutral-600 bg-neutral-700 text-neutral-100 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors duration-300 resize-none"
                     placeholder="Tell me about your project, ideas, or how we can work together..."
                   />
                 </div>
@@ -332,8 +332,8 @@ const Contact = () => {
                     animate={{ opacity: 1, y: 0 }}
                     className={`p-4 rounded-lg ${
                       submitStatus === 'success'
-                        ? 'bg-green-50 text-green-800 border border-green-200'
-                        : 'bg-red-50 text-red-800 border border-red-200'
+                        ? 'bg-green-900 text-green-300 border border-green-700'
+                        : 'bg-red-900 text-red-300 border border-red-700'
                     }`}
                   >
                     <div className="flex items-center space-x-2">
@@ -374,7 +374,7 @@ const Contact = () => {
               </form>
 
               {/* Form Note */}
-              <p className="text-sm text-neutral-500 mt-4 text-center">
+              <p className="text-sm text-neutral-400 mt-4 text-center">
                 * Required fields. Your information is safe and will never be shared.
               </p>
             </div>

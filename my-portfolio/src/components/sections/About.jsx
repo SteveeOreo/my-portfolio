@@ -62,33 +62,33 @@ const About = () => {
       icon: Heart,
       title: "Humility",
       description: "I believe that true growth comes from acknowledging what we don't know and being open to learning from every experience and every person I meet.",
-      color: "text-red-500",
-      bgColor: "bg-red-50",
-      borderColor: "border-red-200"
+      color: "text-red-400",
+      bgColor: "bg-red-950",
+      borderColor: "border-red-800"
     },
     {
       icon: Users,
       title: "Collaboration",
       description: "The best solutions emerge when diverse minds work together. I thrive in team environments where ideas are shared freely and everyone's voice is heard.",
-      color: "text-blue-500",
-      bgColor: "bg-blue-50",
-      borderColor: "border-blue-200"
+      color: "text-blue-400",
+      bgColor: "bg-blue-950",
+      borderColor: "border-blue-800"
     },
     {
       icon: BookOpen,
       title: "Research",
       description: "Before writing the first line of code, I dive deep into understanding the problem, user needs, and available solutions. Research is the foundation of innovation.",
-      color: "text-purple-500",
-      bgColor: "bg-purple-50",
-      borderColor: "border-purple-200"
+      color: "text-purple-400",
+      bgColor: "bg-purple-950",
+      borderColor: "border-purple-800"
     },
     {
       icon: Lightbulb,
       title: "Self-Learning",
       description: "Technology evolves rapidly, and so do I. I'm committed to continuous learning, staying curious, and adapting to new challenges with enthusiasm.",
-      color: "text-yellow-500",
-      bgColor: "bg-yellow-50",
-      borderColor: "border-yellow-200"
+      color: "text-yellow-400",
+      bgColor: "bg-yellow-950",
+      borderColor: "border-yellow-800"
     }
   ];
 
@@ -116,7 +116,7 @@ const About = () => {
   ];
 
   return (
-    <section id="about" className="section-padding bg-gradient-to-b from-white to-neutral-50">
+    <section id="about" className="section-padding bg-gradient-to-b from-black to-neutral-900">
       <motion.div
         className="section-container"
         variants={containerVariants}
@@ -130,7 +130,7 @@ const About = () => {
             About <span className="gradient-text">Me</span>
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-primary-600 to-earth-600 mx-auto mb-6"></div>
-          <p className="text-lg sm:text-xl text-neutral-600 max-w-3xl mx-auto">
+          <p className="text-lg sm:text-xl text-neutral-300 max-w-3xl mx-auto">
             A passionate developer with a strategic mindset, dedicated to creating technology
             that makes a meaningful difference in people's lives.
           </p>
@@ -141,13 +141,13 @@ const About = () => {
           {/* Left Column - Personal Story */}
           <motion.div variants={itemVariants}>
             <div className="prose prose-lg max-w-none">
-              <div className="bg-white rounded-2xl p-8 border border-neutral-200 shadow-sm">
+              <div className="bg-neutral-800 rounded-2xl p-8 border border-neutral-700 shadow-sm">
                 <div className="flex items-center mb-6">
                   <div className="text-4xl mr-4">♚</div>
-                  <h3 className="text-2xl font-bold text-neutral-900">My Journey</h3>
+                  <h3 className="text-2xl font-bold text-neutral-100">My Journey</h3>
                 </div>
 
-                <div className="space-y-6 text-neutral-700 leading-relaxed">
+                <div className="space-y-6 text-neutral-300 leading-relaxed">
                   <p>
                     My passion for technology began with a simple question: <em>"How can we use
                     code to improve lives?"</em> This curiosity led me to specialize in frontend
@@ -171,12 +171,12 @@ const About = () => {
                 </div>
 
                 {/* Chess Philosophy Box */}
-                <div className="mt-8 p-6 bg-gradient-to-r from-primary-50 to-earth-50 rounded-xl border border-primary-100">
+                <div className="mt-8 p-6 bg-gradient-to-r from-primary-900 to-earth-900 rounded-xl border border-primary-700">
                   <div className="flex items-center mb-3">
                     <Target className="w-5 h-5 text-primary-600 mr-2" />
-                    <span className="font-semibold text-primary-700">Chess & Code Philosophy</span>
+                    <span className="font-semibold text-primary-400">Chess & Code Philosophy</span>
                   </div>
-                  <p className="text-sm text-neutral-700 italic">
+                  <p className="text-sm text-neutral-300 italic">
                     "In chess, every piece has a purpose, and every move should advance your
                     position. In development, every line of code should serve a purpose and
                     every feature should advance the user's goals."
@@ -190,51 +190,51 @@ const About = () => {
           <motion.div variants={itemVariants}>
             <div className="space-y-8">
               {/* Quick Stats */}
-              <div className="bg-white rounded-2xl p-8 border border-neutral-200 shadow-sm">
-                <h3 className="text-2xl font-bold text-neutral-900 mb-6">Quick Stats</h3>
+              <div className="bg-neutral-800 rounded-2xl p-8 border border-neutral-700 shadow-sm">
+                <h3 className="text-2xl font-bold text-neutral-100 mb-6">Quick Stats</h3>
                 <div className="grid grid-cols-2 gap-6">
                   <div className="text-center">
                     <div className="text-3xl font-bold text-primary-600 mb-1">3+</div>
-                    <div className="text-sm text-neutral-600">Years Experience</div>
+                    <div className="text-sm text-neutral-300">Years Experience</div>
                   </div>
                   <div className="text-center">
                     <div className="text-3xl font-bold text-earth-600 mb-1">15+</div>
-                    <div className="text-sm text-neutral-600">Projects Completed</div>
+                    <div className="text-sm text-neutral-300">Projects Completed</div>
                   </div>
                   <div className="text-center">
                     <div className="text-3xl font-bold text-green-600 mb-1">5+</div>
-                    <div className="text-sm text-neutral-600">Tech Stacks</div>
+                    <div className="text-sm text-neutral-300">Tech Stacks</div>
                   </div>
                   <div className="text-center">
                     <div className="text-3xl font-bold text-blue-600 mb-1">∞</div>
-                    <div className="text-sm text-neutral-600">Learning Mode</div>
+                    <div className="text-sm text-neutral-300">Learning Mode</div>
                   </div>
                 </div>
               </div>
 
               {/* Current Focus */}
-              <div className="bg-white rounded-2xl p-8 border border-neutral-200 shadow-sm">
-                <h3 className="text-2xl font-bold text-neutral-900 mb-6">Current Focus</h3>
+              <div className="bg-neutral-800 rounded-2xl p-8 border border-neutral-700 shadow-sm">
+                <h3 className="text-2xl font-bold text-neutral-100 mb-6">Current Focus</h3>
                 <div className="space-y-4">
                   <div className="flex items-start space-x-3">
                     <Compass className="w-5 h-5 text-primary-600 mt-0.5 flex-shrink-0" />
                     <div>
-                      <p className="font-medium text-neutral-900">Agricultural Technology</p>
-                      <p className="text-sm text-neutral-600">Building digital solutions for farmer empowerment and food security</p>
+                      <p className="font-medium text-neutral-100">Agricultural Technology</p>
+                      <p className="text-sm text-neutral-300">Building digital solutions for farmer empowerment and food security</p>
                     </div>
                   </div>
                   <div className="flex items-start space-x-3">
                     <Code className="w-5 h-5 text-earth-600 mt-0.5 flex-shrink-0" />
                     <div>
-                      <p className="font-medium text-neutral-900">Frontend Excellence</p>
-                      <p className="text-sm text-neutral-600">Mastering React, TypeScript, and modern development patterns</p>
+                      <p className="font-medium text-neutral-100">Frontend Excellence</p>
+                      <p className="text-sm text-neutral-300">Mastering React, TypeScript, and modern development patterns</p>
                     </div>
                   </div>
                   <div className="flex items-start space-x-3">
                     <Users className="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0" />
                     <div>
-                      <p className="font-medium text-neutral-900">Community Impact</p>
-                      <p className="text-sm text-neutral-600">Creating platforms that connect and empower communities</p>
+                      <p className="font-medium text-neutral-100">Community Impact</p>
+                      <p className="text-sm text-neutral-300">Creating platforms that connect and empower communities</p>
                     </div>
                   </div>
                 </div>
@@ -249,7 +249,7 @@ const About = () => {
             <h3 className="text-2xl sm:text-3xl font-bold mb-4">
               Core <span className="gradient-text">Values</span>
             </h3>
-            <p className="text-lg text-neutral-600 max-w-2xl mx-auto">
+            <p className="text-lg text-neutral-300 max-w-2xl mx-auto">
               The principles that shape my approach to development and collaboration
             </p>
           </div>
@@ -258,15 +258,15 @@ const About = () => {
             {coreValues.map((value, index) => (
               <motion.div
                 key={index}
-                className={`bg-white rounded-xl p-6 border-2 ${value.borderColor} hover:shadow-lg transition-all duration-300 group`}
+                className={`bg-neutral-800 rounded-xl p-6 border-2 ${value.borderColor} hover:shadow-lg transition-all duration-300 group`}
                 variants={cardVariants}
                 whileHover="hover"
               >
                 <div className={`${value.bgColor} w-12 h-12 rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300`}>
                   <value.icon className={`w-6 h-6 ${value.color}`} />
                 </div>
-                <h4 className="text-lg font-bold text-neutral-900 mb-3">{value.title}</h4>
-                <p className="text-sm text-neutral-600 leading-relaxed">{value.description}</p>
+                <h4 className="text-lg font-bold text-neutral-100 mb-3">{value.title}</h4>
+                <p className="text-sm text-neutral-300 leading-relaxed">{value.description}</p>
               </motion.div>
             ))}
           </div>
@@ -278,7 +278,7 @@ const About = () => {
             <h3 className="text-2xl sm:text-3xl font-bold mb-4">
               Beyond <span className="gradient-text">Code</span>
             </h3>
-            <p className="text-lg text-neutral-600 max-w-2xl mx-auto">
+            <p className="text-lg text-neutral-300 max-w-2xl mx-auto">
               What drives my passion and shapes my perspective as a developer
             </p>
           </div>
@@ -287,17 +287,17 @@ const About = () => {
             {interests.map((interest, index) => (
               <motion.div
                 key={index}
-                className="bg-white rounded-xl p-6 border border-neutral-200 hover:border-primary-300 hover:shadow-lg transition-all duration-300 group"
+                className="bg-neutral-800 rounded-xl p-6 border border-neutral-700 hover:border-primary-400 hover:shadow-lg transition-all duration-300 group"
                 variants={cardVariants}
                 whileHover="hover"
               >
                 <div className="flex items-start space-x-4">
-                  <div className="bg-primary-50 p-3 rounded-lg group-hover:scale-110 transition-transform duration-300">
+                  <div className="bg-primary-900 p-3 rounded-lg group-hover:scale-110 transition-transform duration-300">
                     <interest.icon className="w-6 h-6 text-primary-600" />
                   </div>
                   <div>
-                    <h4 className="text-lg font-bold text-neutral-900 mb-2">{interest.title}</h4>
-                    <p className="text-neutral-600 leading-relaxed">{interest.description}</p>
+                    <h4 className="text-lg font-bold text-neutral-100 mb-2">{interest.title}</h4>
+                    <p className="text-neutral-300 leading-relaxed">{interest.description}</p>
                   </div>
                 </div>
               </motion.div>
@@ -318,7 +318,7 @@ const About = () => {
             </p>
             <motion.a
               href="#contact"
-              className="inline-flex items-center px-8 py-3 bg-white text-primary-600 font-semibold rounded-lg hover:bg-neutral-50 transition-colors duration-300"
+              className="inline-flex items-center px-8 py-3 bg-neutral-800 text-primary-400 font-semibold rounded-lg hover:bg-neutral-700 transition-colors duration-300"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
