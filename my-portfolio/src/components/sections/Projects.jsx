@@ -4,7 +4,9 @@ import { ExternalLink, Github, Zap, Users, TrendingUp, Newspaper, Palette, Chevr
 
 // Import project images
 import agrosphereImage from '../../../src/images/Agrosphere.png';
-import redFoxImage from '../../../src/images/RedFox News App.png';
+import redFoxImage from '../../../src/images/RedFoxNewsApp.png';
+import googleSitePortfolioImage from '../../../src/images/GooglesitePortforlio.png';
+import headphonesImage from '../../../src/images/Headphones.png';
 
 const Projects = () => {
   const containerVariants = {
@@ -44,6 +46,21 @@ const Projects = () => {
   const projects = [
     {
       id: 1,
+      title: "Google site Portfolio",
+      description: "My first website built with google site ,showcasing my Bio, project, skills and contact information.",
+      image: googleSitePortfolioImage,
+      tags: ["Google sites"],
+      category: "Portfolio",
+      github: "https://sites.google.com/view/ekwueme-stephen-chiazam/home",
+      live: "https://sites.google.com/view/ekwueme-stephen-chiazam/home",
+      highlights: [
+        "Responsiveness",
+        "Zero Code site",
+        "Experimental features"
+      ]
+    },
+    {
+      id: 2,
       title: "Agrosphere",
       description: "A comprehensive digital platform empowering small-scale farmers with bulk purchases and community forum where farmers can communicate and improve their agricultural resources. Built with modern React architecture and intuitive UI/UX design.",
       image: agrosphereImage,
@@ -56,22 +73,6 @@ const Projects = () => {
         "Weather forecasting integration",
         "Farmer community features",
         "Mobile-responsive design"
-      ]
-    },
-    {
-      id: 2,
-      title: "E-Commerce Platform",
-      description: "Full-featured e-commerce solution with advanced product catalog, secure payment processing, and comprehensive admin dashboard. Focused on user experience and conversion optimization.",
-      image: "🛒",
-      tags: ["React", "Zustand", "Stripe API", "Tailwind CSS", "Node.js"],
-      category: "E-Commerce",
-      github: "https://github.com/yourusername/ecommerce-platform",
-      live: "https://ecommerce-demo.vercel.app",
-      highlights: [
-        "Secure payment processing",
-        "Advanced search & filtering",
-        "Inventory management",
-        "Analytics dashboard"
       ]
     },
     {
@@ -92,52 +93,18 @@ const Projects = () => {
     },
     {
       id: 4,
-      title: "Portfolio Showcase",
-      description: "A collection of interactive web applications and design experiments. Showcasing creative solutions, animations, and modern development practices.",
-      image: "🎨",
-      tags: ["React", "Framer Motion", "Three.js", "GSAP", "Creative Coding"],
-      category: "Portfolio",
-      github: "https://github.com/yourusername/portfolio-collection",
-      live: "https://portfolio-showcase.vercel.app",
+      title: "Headphones",
+      description: "Demo headphones platform with interactive cards, navbar, and clean user experience.",
+      image: headphonesImage,
+      tags: ["HTML", "CSS", "JavaScript"],
+      category: "Entertainment Tech",
+      github: "https://github.com/SteveeOreo/alx_html_css/tree/main/headphones",
+      live: "https://steveeoreo.github.io/alx_html_css/headphones/",
       highlights: [
-        "Interactive animations",
-        "3D visualizations",
-        "Performance optimized",
-        "Experimental features"
+        "Interactivity",
+        "Responsiveness",
       ]
     },
-    {
-      id: 5,
-      title: "Farmer Connect Network",
-      description: "Social platform connecting farmers globally to share knowledge, resources, and market opportunities. Features real-time messaging and community-driven content.",
-      image: "🤝",
-      tags: ["React", "Socket.io", "MongoDB", "Express", "Real-time"],
-      category: "Social Platform",
-      github: "https://github.com/yourusername/farmer-connect",
-      live: "https://farmer-connect-demo.vercel.app",
-      highlights: [
-        "Real-time messaging",
-        "Knowledge sharing hub",
-        "Market opportunity alerts",
-        "Community moderation"
-      ]
-    },
-    {
-      id: 6,
-      title: "Agricultural Dashboard",
-      description: "Comprehensive analytics dashboard for agricultural data visualization. Provides insights into crop yields, market trends, and resource optimization.",
-      image: "",
-      tags: ["React", "D3.js", "Chart.js", "Data Visualization", "Analytics"],
-      category: "Data Visualization",
-      github: "https://github.com/yourusername/ag-dashboard",
-      live: "https://ag-dashboard-demo.vercel.app",
-      highlights: [
-        "Interactive data visualization",
-        "Trend analysis",
-        "Export capabilities",
-        "Multi-device support"
-      ]
-    }
   ];
 
   const getCategoryIcon = (category) => {

@@ -12,6 +12,7 @@ import {
   AlertCircle,
   Loader2
 } from 'lucide-react';
+import { FaChessKing } from 'react-icons/fa';
 import emailjs from '@emailjs/browser';
 
 const Contact = () => {
@@ -156,7 +157,14 @@ const Contact = () => {
       name: "Twitter",
       href: "https://x.com/Steve__Oreo",
       color: "hover:bg-blue-400"
+    },
+    {
+      icon: FaChessKing,
+      name: "Chess",
+      href: "https://www.chess.com/member/SteveeOreo",
+      color: "hover:bg-green-400"
     }
+   
   ];
 
   return (
@@ -231,12 +239,13 @@ const Contact = () => {
                     href={social.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className={`p-3 bg-neutral-800 text-neutral-300 rounded-lg transition-all duration-300 ${social.color} hover:text-white hover:scale-110`}
-                    whileHover={{ y: -2 }}
+                    className={`p-3 bg-neutral-800 text-neutral-300 rounded-lg transition-all duration-300 ${social.color} hover:text-white hover:shadow-lg`}
+                    whileHover={{ y: -5, scale: 1.1 }}
                     whileTap={{ scale: 0.95 }}
                     aria-label={social.name}
+                    title={social.name}
                   >
-                    <social.icon className="w-5 h-5" />
+                    <social.icon className="w-6 h-6" />
                   </motion.a>
                 ))}
               </div>
@@ -247,10 +256,14 @@ const Contact = () => {
               className="bg-gradient-to-r from-primary-900 to-earth-900 rounded-xl p-6 border border-primary-700"
               variants={cardVariants}
             >
-              <div className="text-2xl mb-3">♚</div>
+              <div className="flex items-center mb-3">
+                <FaChessKing className="text-yellow-400 w-6 h-6 mr-2" />
+                <span className="text-xl font-semibold text-neutral-100">Chess & Code</span>
+              </div>
               <blockquote className="text-neutral-300 italic">
-                "Every great project begins with a single move. Let's make yours a strategic one."
+                "Like chess, great development requires strategy, foresight, and precise execution. Let's make your next move a winning one."
               </blockquote>
+              <p className="text-xs text-neutral-400 mt-3 text-right">- Stephen Ekwueme</p>
             </motion.div>
           </motion.div>
 
@@ -394,7 +407,7 @@ const Contact = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <motion.a
-                href="mailto:stephen.ekwueme@example.com"
+                href="mailto:stephen.ekwuemec@gmail.com"
                 className="inline-flex items-center px-8 py-3 bg-primary-600 hover:bg-primary-700 text-white font-semibold rounded-lg transition-colors duration-300"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
