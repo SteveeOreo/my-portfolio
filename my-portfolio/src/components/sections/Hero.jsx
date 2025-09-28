@@ -59,43 +59,42 @@ const Hero = () => {
       {/* Background Pattern */}
       <div className="absolute inset-0 chess-board-bg opacity-30"></div>
 
-      {/* Floating Chess Pieces */}
+      {/* Floating Chess Pieces - Hidden on mobile for better performance */}
       <motion.div
-        className="absolute top-20 left-10 text-primary-200"
+        className="hidden sm:block absolute top-20 left-4 sm:left-10 text-primary-200 text-2xl sm:text-3xl lg:text-5xl"
         variants={chessPieceVariants}
         initial="hidden"
         animate={["visible", "floating"]}
-        style={{ fontSize: '3rem' }}
       >
         ♚
       </motion.div>
 
       <motion.div
-        className="absolute top-32 right-20 text-earth-300"
+        className="hidden sm:block absolute top-32 right-4 sm:right-20 text-earth-300 text-xl sm:text-2xl lg:text-4xl"
         variants={chessPieceVariants}
         initial="hidden"
         animate={["visible", "floating"]}
-        style={{ fontSize: '2.5rem', animationDelay: '1s' }}
+        style={{ animationDelay: '1s' }}
       >
         ♛
       </motion.div>
 
       <motion.div
-        className="absolute bottom-32 left-20 text-primary-300"
+        className="hidden md:block absolute bottom-32 left-4 sm:left-20 text-primary-300 text-lg sm:text-xl lg:text-3xl"
         variants={chessPieceVariants}
         initial="hidden"
         animate={["visible", "floating"]}
-        style={{ fontSize: '2rem', animationDelay: '2s' }}
+        style={{ animationDelay: '2s' }}
       >
         ♝
       </motion.div>
 
       <motion.div
-        className="absolute bottom-40 right-16 text-earth-400"
+        className="hidden md:block absolute bottom-40 right-4 sm:right-16 text-earth-400 text-lg sm:text-xl lg:text-3xl"
         variants={chessPieceVariants}
         initial="hidden"
         animate={["visible", "floating"]}
-        style={{ fontSize: '2.2rem', animationDelay: '0.5s' }}
+        style={{ animationDelay: '0.5s' }}
       >
         ♞
       </motion.div>
@@ -117,14 +116,14 @@ const Hero = () => {
 
         {/* Name and Title */}
         <motion.h1
-          className="text-4xl sm:text-6xl lg:text-7xl font-bold mb-6"
+          className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-4 sm:mb-6 px-4"
           variants={itemVariants}
         >
           <span className="gradient-text">Stephen Ekwueme</span>
         </motion.h1>
 
         <motion.h2
-          className="text-xl sm:text-2xl lg:text-3xl text-neutral-300 mb-8 font-medium"
+          className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-neutral-300 mb-6 sm:mb-8 font-medium px-4"
           variants={itemVariants}
         >
           Frontend Software Engineer
@@ -132,7 +131,7 @@ const Hero = () => {
 
         {/* Mission Statement */}
         <motion.p
-          className="text-lg sm:text-xl text-neutral-300 max-w-4xl mx-auto mb-12 leading-relaxed"
+          className="text-base sm:text-lg md:text-xl text-neutral-300 max-w-4xl mx-auto mb-8 sm:mb-12 leading-relaxed px-4 sm:px-6"
           variants={itemVariants}
         >
           Passionate about solving problems through technology and creating{' '}
@@ -144,7 +143,7 @@ const Hero = () => {
 
         {/* CTA Buttons */}
         <motion.div
-          className="flex flex-col sm:flex-row gap-4 justify-center mb-16"
+          className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center mb-12 sm:mb-16 px-4"
           variants={itemVariants}
         >
           <motion.a
@@ -167,7 +166,7 @@ const Hero = () => {
 
         {/* Social Links */}
         <motion.div
-          className="flex justify-center space-x-6 mb-16"
+          className="flex justify-center space-x-4 sm:space-x-6 mb-12 sm:mb-16 px-4"
           variants={itemVariants}
         >
           {socialLinks.map(({ icon: Icon, href, label }) => (
@@ -176,12 +175,12 @@ const Hero = () => {
               href={href}
               target="_blank"
               rel="noopener noreferrer"
-              className="p-3 rounded-full bg-neutral-800 shadow-md border border-neutral-700 text-neutral-300 hover:text-primary-500 hover:border-primary-400 hover:shadow-lg transition-all duration-300"
+              className="p-2.5 sm:p-3 rounded-full bg-neutral-800 shadow-md border border-neutral-700 text-neutral-300 hover:text-primary-500 hover:border-primary-400 hover:shadow-lg transition-all duration-300 touch-manipulation"
               whileHover={{ scale: 1.1, y: -2 }}
               whileTap={{ scale: 0.95 }}
               aria-label={label}
             >
-              <Icon className="w-6 h-6" />
+              <Icon className="w-5 h-5 sm:w-6 sm:h-6" />
             </motion.a>
           ))}
         </motion.div>

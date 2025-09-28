@@ -141,13 +141,13 @@ const About = () => {
           {/* Left Column - Personal Story */}
           <motion.div variants={itemVariants}>
             <div className="prose prose-lg max-w-none">
-              <div className="bg-neutral-800 rounded-2xl p-8 border border-neutral-700 shadow-sm">
+              <div className="card-glass shimmer">
                 <div className="flex items-center mb-6">
-                  <div className="text-4xl mr-4">♚</div>
+                  <div className="text-4xl mr-4 gentle-bounce">♚</div>
                   <h3 className="text-2xl font-bold text-neutral-100">My Journey</h3>
                 </div>
 
-                <div className="space-y-6 text-neutral-300 leading-relaxed">
+                <div className="space-y-6 text-neutral-300 leading-relaxed fade-in-up">
                   <p>
                     My passion for technology began with a simple question: <em>"How can we use
                     code to improve lives?"</em> This curiosity led me to specialize in frontend
@@ -194,11 +194,11 @@ const About = () => {
                 <h3 className="text-2xl font-bold text-neutral-100 mb-6">Quick Stats</h3>
                 <div className="grid grid-cols-2 gap-6">
                   <div className="text-center">
-                    <div className="text-3xl font-bold text-primary-600 mb-1">3+</div>
+                    <div className="text-3xl font-bold text-primary-600 mb-1">2+</div>
                     <div className="text-sm text-neutral-300">Years Experience</div>
                   </div>
                   <div className="text-center">
-                    <div className="text-3xl font-bold text-earth-600 mb-1">15+</div>
+                    <div className="text-3xl font-bold text-earth-600 mb-1">4+</div>
                     <div className="text-sm text-neutral-300">Projects Completed</div>
                   </div>
                   <div className="text-center">
@@ -213,24 +213,24 @@ const About = () => {
               </div>
 
               {/* Current Focus */}
-              <div className="bg-neutral-800 rounded-2xl p-8 border border-neutral-700 shadow-sm">
+              <div className="card-glass">
                 <h3 className="text-2xl font-bold text-neutral-100 mb-6">Current Focus</h3>
                 <div className="space-y-4">
-                  <div className="flex items-start space-x-3">
+                  <div className="flex items-start space-x-3 gentle-bounce">
                     <Compass className="w-5 h-5 text-primary-600 mt-0.5 flex-shrink-0" />
                     <div>
                       <p className="font-medium text-neutral-100">Agricultural Technology</p>
                       <p className="text-sm text-neutral-300">Building digital solutions for farmer empowerment and food security</p>
                     </div>
                   </div>
-                  <div className="flex items-start space-x-3">
+                  <div className="flex items-start space-x-3 gentle-bounce">
                     <Code className="w-5 h-5 text-earth-600 mt-0.5 flex-shrink-0" />
                     <div>
                       <p className="font-medium text-neutral-100">Frontend Excellence</p>
                       <p className="text-sm text-neutral-300">Mastering React, TypeScript, and modern development patterns</p>
                     </div>
                   </div>
-                  <div className="flex items-start space-x-3">
+                  <div className="flex items-start space-x-3 gentle-bounce">
                     <Users className="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0" />
                     <div>
                       <p className="font-medium text-neutral-100">Community Impact</p>
@@ -258,11 +258,11 @@ const About = () => {
             {coreValues.map((value, index) => (
               <motion.div
                 key={index}
-                className={`bg-neutral-800 rounded-xl p-6 border-2 ${value.borderColor} hover:shadow-lg transition-all duration-300 group`}
+                className={`card-glass border-2 ${value.borderColor} hover:shadow-lg hover:shadow-${value.color.split('-')[1]}-500/20 transition-all duration-300 group`}
                 variants={cardVariants}
                 whileHover="hover"
               >
-                <div className={`${value.bgColor} w-12 h-12 rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300`}>
+                <div className={`${value.bgColor} w-12 h-12 rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300 gentle-bounce`}>
                   <value.icon className={`w-6 h-6 ${value.color}`} />
                 </div>
                 <h4 className="text-lg font-bold text-neutral-100 mb-3">{value.title}</h4>
@@ -287,12 +287,12 @@ const About = () => {
             {interests.map((interest, index) => (
               <motion.div
                 key={index}
-                className="bg-neutral-800 rounded-xl p-6 border border-neutral-700 hover:border-primary-400 hover:shadow-lg transition-all duration-300 group"
+                className="card-glass hover:border-primary-400 hover:shadow-lg hover:shadow-primary-500/20 transition-all duration-300 group"
                 variants={cardVariants}
                 whileHover="hover"
               >
                 <div className="flex items-start space-x-4">
-                  <div className="bg-primary-900 p-3 rounded-lg group-hover:scale-110 transition-transform duration-300">
+                  <div className="bg-primary-900 p-3 rounded-lg group-hover:scale-110 transition-transform duration-300 gentle-bounce">
                     <interest.icon className="w-6 h-6 text-primary-600" />
                   </div>
                   <div>
@@ -302,28 +302,6 @@ const About = () => {
                 </div>
               </motion.div>
             ))}
-          </div>
-        </motion.div>
-
-        {/* Call to Action */}
-        <motion.div
-          className="text-center mt-16"
-          variants={itemVariants}
-        >
-          <div className="bg-gradient-to-r from-primary-600 to-earth-600 rounded-2xl p-8 text-white">
-            <h3 className="text-2xl font-bold mb-4">Let's Build Something Amazing Together</h3>
-            <p className="text-lg opacity-90 mb-6 max-w-2xl mx-auto">
-              Whether you're looking to empower farmers with technology, create compelling e-commerce
-              experiences, or solve complex problems with elegant solutions, I'd love to collaborate.
-            </p>
-            <motion.a
-              href="#contact"
-              className="inline-flex items-center px-8 py-3 bg-neutral-800 text-primary-400 font-semibold rounded-lg hover:bg-neutral-700 transition-colors duration-300"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              Start a Conversation
-            </motion.a>
           </div>
         </motion.div>
       </motion.div>

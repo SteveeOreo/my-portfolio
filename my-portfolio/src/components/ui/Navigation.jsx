@@ -169,7 +169,7 @@ const Navigation = () => {
 
             {/* Mobile Menu Button */}
             <motion.button
-              className="md:hidden p-2 rounded-lg hover:bg-neutral-800 transition-colors duration-300"
+              className="md:hidden p-2 rounded-lg hover:bg-neutral-800 transition-colors duration-300 touch-target"
               onClick={() => setIsOpen(!isOpen)}
               whileTap={{ scale: 0.95 }}
               aria-label="Toggle menu"
@@ -199,7 +199,7 @@ const Navigation = () => {
 
             {/* Mobile Menu */}
             <motion.div
-              className="fixed top-0 right-0 bottom-0 z-50 w-80 max-w-[80vw] bg-neutral-900 border-l border-neutral-800 shadow-2xl md:hidden"
+              className="fixed top-0 right-0 bottom-0 z-50 w-80 max-w-[85vw] bg-neutral-900 border-l border-neutral-800 shadow-2xl md:hidden"
               variants={menuVariants}
               initial="closed"
               animate="open"
@@ -221,7 +221,7 @@ const Navigation = () => {
                 </div>
 
                 {/* Mobile Navigation Items */}
-                <nav className="space-y-6">
+                <nav className="space-y-4 sm:space-y-6">
                   {navItems.map((item, index) => (
                     <motion.a
                       key={item.id}
@@ -230,7 +230,7 @@ const Navigation = () => {
                         e.preventDefault();
                         handleNavClick(item.href);
                       }}
-                      className={`block text-lg font-medium transition-colors duration-300 hover:text-primary-500 ${
+                      className={`block text-lg font-medium transition-colors duration-300 hover:text-primary-500 py-2 touch-target ${
                         activeSection === item.id
                           ? 'text-primary-500'
                           : 'text-neutral-300'
@@ -247,7 +247,7 @@ const Navigation = () => {
 
                 {/* Mobile CTA */}
                 <motion.div
-                  className="mt-8 pt-6 border-t border-neutral-800"
+                  className="mt-6 sm:mt-8 pt-4 sm:pt-6 border-t border-neutral-800"
                   variants={navItemVariants}
                   custom={navItems.length}
                 >
@@ -257,7 +257,7 @@ const Navigation = () => {
                       e.preventDefault();
                       handleNavClick('#contact');
                     }}
-                    className="block w-full text-center px-6 py-3 bg-primary-600 hover:bg-primary-700 text-white font-semibold rounded-lg transition-colors duration-300"
+                    className="block w-full text-center px-6 py-3 bg-primary-600 hover:bg-primary-700 text-white font-semibold rounded-lg transition-colors duration-300 touch-target"
                   >
                     Let's Talk
                   </a>

@@ -121,28 +121,6 @@ const Footer = () => {
             </div>
           </motion.div>
 
-          {/* Quick Links */}
-          <motion.div variants={itemVariants}>
-            <h3 className="text-xl font-semibold mb-4 text-primary-400">Quick Links</h3>
-            <ul className="space-y-3">
-              {quickLinks.map((link, index) => (
-                <li key={index}>
-                  <a
-                    href={link.href}
-                    onClick={(e) => {
-                      e.preventDefault();
-                      handleNavClick(link.href);
-                    }}
-                    className="text-neutral-300 hover:text-primary-400 transition-colors duration-300 flex items-center group"
-                  >
-                    <span className="group-hover:translate-x-1 transition-transform duration-300">
-                      {link.label}
-                    </span>
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </motion.div>
 
           {/* Connect */}
           <motion.div variants={itemVariants}>
