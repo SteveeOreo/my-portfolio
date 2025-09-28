@@ -178,22 +178,22 @@ const Contact = () => {
       >
         {/* Section Header */}
         <motion.div className="text-center mb-16" variants={itemVariants}>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 text-enhanced-xl text-high-contrast">
             Let's <span className="gradient-text">Connect</span>
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-primary-600 to-earth-600 mx-auto mb-6"></div>
-          <p className="text-lg sm:text-xl text-neutral-300 max-w-3xl mx-auto">
+          <p className="text-lg sm:text-xl text-enhanced-lg text-medium-contrast max-w-3xl mx-auto">
             Ready to discuss your next project? Whether it's agriculture tech, e-commerce solutions,
             or innovative web applications, I'd love to hear your ideas and explore how we can work together.
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
           {/* Contact Information */}
-          <motion.div className="space-y-8" variants={itemVariants}>
+          <motion.div className="space-y-6 sm:space-y-8" variants={itemVariants}>
             <div>
-              <h3 className="text-2xl font-bold text-neutral-100 mb-6">Get In Touch</h3>
-              <p className="text-neutral-300 mb-8 leading-relaxed">
+              <h3 className="text-xl sm:text-2xl font-bold text-neutral-100 mb-4 sm:mb-6">Get In Touch</h3>
+              <p className="text-sm sm:text-base text-neutral-300 mb-6 sm:mb-8 leading-relaxed">
                 I'm always excited to discuss new opportunities and challenges. Whether you're a
                 startup looking to build from scratch, an established company seeking to innovate,
                 or a fellow developer wanting to collaborate, let's start a conversation.
@@ -201,28 +201,28 @@ const Contact = () => {
             </div>
 
             {/* Contact Cards */}
-            <div className="space-y-4">
+            <div className="space-y-3 sm:space-y-4">
               {contactInfo.map((info, index) => (
                 <motion.div
                   key={index}
-                  className="flex items-center space-x-4 p-4 bg-neutral-800 rounded-xl border border-neutral-700 hover:border-primary-500 hover:shadow-lg transition-all duration-300"
+                  className="flex items-center space-x-3 sm:space-x-4 p-3 sm:p-4 bg-neutral-800 rounded-xl border border-neutral-700 hover:border-primary-500 hover:shadow-lg transition-all duration-300"
                   variants={cardVariants}
                   whileHover="hover"
                 >
-                  <div className={`bg-neutral-900 p-3 rounded-lg`}>
-                    <info.icon className={`w-6 h-6 ${info.color}`} />
+                  <div className={`bg-neutral-900 p-2 sm:p-3 rounded-lg`}>
+                    <info.icon className={`w-5 h-5 sm:w-6 sm:h-6 ${info.color}`} />
                   </div>
                   <div>
-                    <h4 className="font-semibold text-neutral-100">{info.title}</h4>
+                    <h4 className="font-semibold text-neutral-100 text-sm sm:text-base">{info.title}</h4>
                     {info.href ? (
                       <a
                         href={info.href}
-                        className="text-neutral-300 hover:text-primary-400 transition-colors duration-300"
+                        className="text-neutral-300 hover:text-primary-400 transition-colors duration-300 text-sm sm:text-base"
                       >
                         {info.content}
                       </a>
                     ) : (
-                      <p className="text-neutral-300">{info.content}</p>
+                      <p className="text-neutral-300 text-sm sm:text-base">{info.content}</p>
                     )}
                   </div>
                 </motion.div>
@@ -231,40 +231,27 @@ const Contact = () => {
 
             {/* Social Links */}
             <div>
-              <h4 className="font-semibold text-neutral-100 mb-4">Follow My Work</h4>
-              <div className="flex space-x-4">
+              <h4 className="font-semibold text-neutral-100 mb-3 sm:mb-4 text-sm sm:text-base">Follow My Work</h4>
+              <div className="flex space-x-3 sm:space-x-4">
                 {socialLinks.map((social, index) => (
                   <motion.a
                     key={index}
                     href={social.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className={`p-3 bg-neutral-800 text-neutral-300 rounded-lg transition-all duration-300 ${social.color} hover:text-white hover:shadow-lg`}
+                    className={`p-2.5 sm:p-3 bg-neutral-800 text-neutral-300 rounded-lg transition-all duration-300 ${social.color} hover:text-white hover:shadow-lg`}
                     whileHover={{ y: -5, scale: 1.1 }}
                     whileTap={{ scale: 0.95 }}
                     aria-label={social.name}
                     title={social.name}
                   >
-                    <social.icon className="w-6 h-6" />
+                    <social.icon className="w-5 h-5 sm:w-6 sm:h-6" />
                   </motion.a>
                 ))}
               </div>
             </div>
 
-            {/* Chess-themed Quote */}
-            <motion.div
-              className="bg-gradient-to-r from-primary-900 to-earth-900 rounded-xl p-6 border border-primary-700"
-              variants={cardVariants}
-            >
-              <div className="flex items-center mb-3">
-                <FaChessKing className="text-yellow-400 w-6 h-6 mr-2" />
-                <span className="text-xl font-semibold text-neutral-100">Chess & Code</span>
-              </div>
-              <blockquote className="text-neutral-300 italic">
-                "Like chess, great development requires strategy, foresight, and precise execution. Let's make your next move a winning one."
-              </blockquote>
-              <p className="text-xs text-neutral-400 mt-3 text-right">- Stephen Ekwueme</p>
-            </motion.div>
+           
           </motion.div>
 
           {/* Contact Form */}
@@ -394,38 +381,7 @@ const Contact = () => {
           </motion.div>
         </div>
 
-        {/* Bottom CTA */}
-        <motion.div
-          className="text-center mt-16"
-          variants={itemVariants}
-        >
-          <div className="bg-gradient-to-r from-neutral-900 to-neutral-800 rounded-2xl p-8 text-white">
-            <h3 className="text-2xl font-bold mb-4">Ready to Make Your Move?</h3>
-            <p className="text-lg opacity-90 mb-6 max-w-2xl mx-auto">
-              Like a well-planned chess strategy, every great project starts with the right opening move.
-              Let's discuss your vision and create something extraordinary together.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <motion.a
-                href="mailto:stephen.ekwuemec@gmail.com"
-                className="inline-flex items-center px-8 py-3 bg-primary-600 hover:bg-primary-700 text-white font-semibold rounded-lg transition-colors duration-300"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                <Mail className="w-5 h-5 mr-2" />
-                Email Me Directly
-              </motion.a>
-              <motion.a
-                href="#projects"
-                className="inline-flex items-center px-8 py-3 border-2 border-white text-white hover:bg-white hover:text-neutral-900 font-semibold rounded-lg transition-colors duration-300"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                View My Work
-              </motion.a>
-            </div>
-          </div>
-        </motion.div>
+
       </motion.div>
     </section>
   );

@@ -4,13 +4,7 @@ import {
   Code2,
   Palette,
   Database,
-  Zap,
-  Globe,
-  Smartphone,
-  GitBranch,
-  Settings,
-  Crown,
-  Target
+  Settings
 } from 'lucide-react';
 
 const Skills = () => {
@@ -116,33 +110,6 @@ const Skills = () => {
     }
   ];
 
-  const coreValues = [
-    {
-      icon: Crown,
-      title: "Strategic Thinking",
-      description: "Approaching problems like chess moves - thinking several steps ahead",
-      gradient: "from-primary-500 to-primary-600"
-    },
-    {
-      icon: Target,
-      title: "Problem Solving",
-      description: "Finding innovative solutions for complex agricultural and e-commerce challenges",
-      gradient: "from-earth-500 to-earth-600"
-    },
-    {
-      icon: Globe,
-      title: "Impact Focus",
-      description: "Building technology that empowers farmers and improves lives globally",
-      gradient: "from-green-500 to-green-600"
-    },
-    {
-      icon: Zap,
-      title: "Continuous Learning",
-      description: "Staying current with latest technologies and industry best practices",
-      gradient: "from-blue-500 to-blue-600"
-    }
-  ];
-
   return (
     <section id="skills" className="section-padding bg-black">
       <motion.div
@@ -154,11 +121,11 @@ const Skills = () => {
       >
         {/* Section Header */}
         <motion.div className="text-center mb-16" variants={itemVariants}>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 text-enhanced-xl text-high-contrast">
             Technical <span className="gradient-text">Expertise</span>
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-primary-600 to-earth-600 mx-auto mb-6"></div>
-          <p className="text-lg sm:text-xl text-neutral-300 max-w-3xl mx-auto">
+          <p className="text-lg sm:text-xl text-enhanced-lg text-medium-contrast max-w-3xl mx-auto">
             A comprehensive toolkit for building modern, scalable applications with focus on
             user experience and agricultural technology solutions.
           </p>
@@ -217,35 +184,6 @@ const Skills = () => {
             </motion.div>
           ))}
         </div>
-
-        {/* Core Values Section */}
-        <motion.div variants={itemVariants}>
-          <div className="text-center mb-12">
-            <h3 className="text-2xl sm:text-3xl font-bold mb-4">
-              Core <span className="gradient-text">Values</span>
-            </h3>
-            <p className="text-lg text-neutral-300 max-w-2xl mx-auto">
-              The principles that guide my approach to development and collaboration
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {coreValues.map((value, index) => (
-              <motion.div
-                key={index}
-                className="text-center p-6 rounded-xl bg-gradient-to-b from-neutral-900 to-neutral-800 border border-neutral-700 hover:border-primary-500 transition-all duration-300 hover:shadow-lg group"
-                variants={skillCardVariants}
-                whileHover="hover"
-              >
-                <div className={`inline-flex p-4 rounded-full bg-gradient-to-r ${value.gradient} mb-4 group-hover:scale-110 transition-transform duration-300`}>
-                  <value.icon className="w-6 h-6 text-white" />
-                </div>
-                <h4 className="text-lg font-bold text-neutral-100 mb-2">{value.title}</h4>
-                <p className="text-sm text-neutral-300 leading-relaxed">{value.description}</p>
-              </motion.div>
-            ))}
-          </div>
-        </motion.div>
 
         {/* Chess Strategy Quote */}
         <motion.div

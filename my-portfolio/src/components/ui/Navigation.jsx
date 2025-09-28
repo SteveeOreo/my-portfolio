@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, Crown, ChevronUp } from 'lucide-react';
+import { Menu, X, ChevronUp } from 'lucide-react';
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -113,16 +113,17 @@ const Navigation = () => {
                 e.preventDefault();
                 handleNavClick('#hero');
               }}
-              className="flex items-center space-x-2 text-xl font-bold text-neutral-100 hover:text-primary-500 transition-colors duration-300"
+              className="flex items-center text-xl font-bold text-neutral-100 hover:text-primary-500 transition-colors duration-300"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              <Crown className="w-6 h-6 text-primary-600" />
-              <span>Stephen</span>
+              <span className="text-primary-500">&lt;</span>
+              <span>Stephen.dev</span>
+              <span className="text-primary-500">/&gt;</span>
             </motion.a>
 
             {/* Desktop Navigation */}
-            <div className="hidden md:flex items-center space-x-8">
+            <div className="hidden md:flex items-center space-x-10">
               {navItems.map((item) => (
                 <motion.a
                   key={item.id}
@@ -131,7 +132,7 @@ const Navigation = () => {
                     e.preventDefault();
                     handleNavClick(item.href);
                   }}
-                  className={`relative font-medium transition-colors duration-300 hover:text-primary-500 ${
+                  className={`relative font-semibold text-base transition-colors duration-300 hover:text-primary-500 ${
                     activeSection === item.id
                       ? 'text-primary-500'
                       : scrolled
@@ -152,20 +153,6 @@ const Navigation = () => {
                 </motion.a>
               ))}
             </div>
-
-            {/* CTA Button - Desktop */}
-            <motion.a
-              href="#contact"
-              onClick={(e) => {
-                e.preventDefault();
-                handleNavClick('#contact');
-              }}
-              className="hidden md:inline-flex items-center px-6 py-2 bg-primary-600 hover:bg-primary-700 text-white font-medium rounded-lg transition-all duration-300 hover:shadow-lg hover:shadow-primary-600/25"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              Let's Talk
-            </motion.a>
 
             {/* Mobile Menu Button */}
             <motion.button

@@ -126,151 +126,89 @@ const About = () => {
       >
         {/* Section Header */}
         <motion.div className="text-center mb-16" variants={itemVariants}>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 text-enhanced-xl text-high-contrast">
             About <span className="gradient-text">Me</span>
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-primary-600 to-earth-600 mx-auto mb-6"></div>
-          <p className="text-lg sm:text-xl text-neutral-300 max-w-3xl mx-auto">
+          <p className="text-lg sm:text-xl text-enhanced-lg text-medium-contrast max-w-3xl mx-auto">
             A passionate developer with a strategic mindset, dedicated to creating technology
             that makes a meaningful difference in people's lives.
           </p>
         </motion.div>
 
         {/* Main About Content */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-20">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
           {/* Left Column - Personal Story */}
           <motion.div variants={itemVariants}>
             <div className="prose prose-lg max-w-none">
               <div className="card-glass shimmer">
-                <div className="flex items-center mb-6">
-                  <div className="text-4xl mr-4 gentle-bounce">♚</div>
-                  <h3 className="text-2xl font-bold text-neutral-100">My Journey</h3>
+                <div className="flex items-center mb-4">
+                  <div className="text-3xl mr-3 gentle-bounce">♚</div>
+                  <h3 className="text-xl font-bold text-neutral-100">My Journey</h3>
                 </div>
 
-                <div className="space-y-6 text-neutral-300 leading-relaxed fade-in-up">
-                  <p>
-                    My passion for technology began with a simple question: <em>"How can we use
-                    code to improve lives?"</em> This curiosity led me to specialize in frontend
-                    development, where I discovered the power of creating intuitive digital
-                    experiences that connect users with solutions they need.
+                <div className="space-y-4 text-neutral-300 leading-relaxed fade-in-up">
+                  <p className="text-sm">
+                    My journey began with the simple satisfaction of buying and reselling consumable products as a kid,
+                    which continued developing as I grew up. This led me to study and ultimately earn a Bachelor’s degree in Entrepreneurship Studies & AgriBusiness. 
+                    During this time, I built a solid foundation in business operations, financial principles, and strategic thinking. 
+                    After graduation, I served as a Personal Assistant to the Director of Administration at the Ministry of Public Utilities & Water Resources. 
+                    In this role, I enhanced my organizational, communication, and leadership skills, learning to manage priorities, streamline processes, and support high-level decision-making.
                   </p>
 
-                  <p>
-                    Working on projects in agriculture and e-commerce has taught me that the
-                    best technology is invisible to the user but transformative in its impact.
-                    I've had the privilege of building platforms that help farmers access market
-                    data, connect with buyers, and make informed decisions about their crops.
-                  </p>
-
-                  <p>
-                    Like chess, programming requires patience, strategic thinking, and the
-                    ability to see patterns others might miss. Each project is a new game
-                    where I analyze the board, anticipate user needs, and execute solutions
-                    that create lasting value.
+                  <p className="text-sm">
+                   While excelling in administration, my curiosity about technology kept growing. I wanted to do more than just manage systems; I wanted to build them. 
+                   This desire prompted my transition into tech through ALX Africa’s Front-End Software Engineering program. Through months of hands-on training, I mastered HTML, CSS, JavaScript, React, and TailwindCSS, gaining experience working in agile development teams.
+                   Most recently, I completed the AI for Developers program, where I explored how artificial intelligence can help developers create smarter, more efficient applications. Today, I combine my business knowledge, administrative experience, and technical skills to develop impactful digital solutions. <br/>
+                   <br/> My goal is to create platforms that enhance access, efficiency, and opportunities, especially in agriculture, e-commerce, and education for small-scale farmers.
+                   For me, coding is more than just writing lines of code; it’s about solving real-world problems, one project at a time.
                   </p>
                 </div>
 
                 {/* Chess Philosophy Box */}
-                <div className="mt-8 p-6 bg-gradient-to-r from-primary-900 to-earth-900 rounded-xl border border-primary-700">
-                  <div className="flex items-center mb-3">
-                    <Target className="w-5 h-5 text-primary-600 mr-2" />
-                    <span className="font-semibold text-primary-400">Chess & Code Philosophy</span>
+                <div className="mt-6 p-4 bg-gradient-to-r from-primary-900 to-earth-900 rounded-xl border border-primary-700">
+                  <div className="flex items-center mb-2">
+                    <Target className="w-4 h-4 text-primary-600 mr-2" />
+                    <span className="font-semibold text-primary-400 text-sm">Chess & Life Philosophy</span>
                   </div>
-                  <p className="text-sm text-neutral-300 italic">
-                    "In chess, every piece has a purpose, and every move should advance your
-                    position. In development, every line of code should serve a purpose and
-                    every feature should advance the user's goals."
+                  <p className="text-xs text-neutral-300 italic">
+                    "The journey to success begins not just with any step, but rather one step taken towards the right direction."
                   </p>
                 </div>
               </div>
             </div>
           </motion.div>
 
-          {/* Right Column - Skills & Stats */}
+          {/* Right Column - Core Values */}
           <motion.div variants={itemVariants}>
-            <div className="space-y-8">
-              {/* Quick Stats */}
-              <div className="bg-neutral-800 rounded-2xl p-8 border border-neutral-700 shadow-sm">
-                <h3 className="text-2xl font-bold text-neutral-100 mb-6">Quick Stats</h3>
-                <div className="grid grid-cols-2 gap-6">
-                  <div className="text-center">
-                    <div className="text-3xl font-bold text-primary-600 mb-1">2+</div>
-                    <div className="text-sm text-neutral-300">Years Experience</div>
-                  </div>
-                  <div className="text-center">
-                    <div className="text-3xl font-bold text-earth-600 mb-1">4+</div>
-                    <div className="text-sm text-neutral-300">Projects Completed</div>
-                  </div>
-                  <div className="text-center">
-                    <div className="text-3xl font-bold text-green-600 mb-1">5+</div>
-                    <div className="text-sm text-neutral-300">Tech Stacks</div>
-                  </div>
-                  <div className="text-center">
-                    <div className="text-3xl font-bold text-blue-600 mb-1">∞</div>
-                    <div className="text-sm text-neutral-300">Learning Mode</div>
-                  </div>
-                </div>
+            <div className="card-glass shimmer">
+              <div className="flex items-center mb-6">
+                <h3 className="text-2xl font-bold text-neutral-100">Core Values</h3>
               </div>
+              <p className="text-neutral-300 mb-6">
+                The principles that guide my approach to development and collaboration.
+              </p>
 
-              {/* Current Focus */}
-              <div className="card-glass">
-                <h3 className="text-2xl font-bold text-neutral-100 mb-6">Current Focus</h3>
-                <div className="space-y-4">
-                  <div className="flex items-start space-x-3 gentle-bounce">
-                    <Compass className="w-5 h-5 text-primary-600 mt-0.5 flex-shrink-0" />
-                    <div>
-                      <p className="font-medium text-neutral-100">Agricultural Technology</p>
-                      <p className="text-sm text-neutral-300">Building digital solutions for farmer empowerment and food security</p>
+              <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+                {coreValues.map((value, index) => (
+                  <motion.div
+                    key={index}
+                    variants={itemVariants}
+                    className="flex flex-col items-center text-center p-4 rounded-lg bg-neutral-800/30 border border-neutral-700/50 hover:border-primary-500/50 transition-all duration-300 group"
+                    whileHover={{ y: -2, scale: 1.02 }}
+                  >
+                    <div className="p-3 rounded-full bg-gradient-to-r from-primary-600 to-earth-600 mb-3 group-hover:scale-110 transition-transform duration-300">
+                      <value.icon className="w-5 h-5 text-white" />
                     </div>
-                  </div>
-                  <div className="flex items-start space-x-3 gentle-bounce">
-                    <Code className="w-5 h-5 text-earth-600 mt-0.5 flex-shrink-0" />
-                    <div>
-                      <p className="font-medium text-neutral-100">Frontend Excellence</p>
-                      <p className="text-sm text-neutral-300">Mastering React, TypeScript, and modern development patterns</p>
-                    </div>
-                  </div>
-                  <div className="flex items-start space-x-3 gentle-bounce">
-                    <Users className="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0" />
-                    <div>
-                      <p className="font-medium text-neutral-100">Community Impact</p>
-                      <p className="text-sm text-neutral-300">Creating platforms that connect and empower communities</p>
-                    </div>
-                  </div>
-                </div>
+                    <span className="text-sm font-medium text-neutral-100 group-hover:text-primary-400 transition-colors duration-300">
+                      {value.title}
+                    </span>
+                  </motion.div>
+                ))}
               </div>
             </div>
           </motion.div>
         </div>
-
-        {/* Core Values */}
-        <motion.div variants={itemVariants}>
-          <div className="text-center mb-12">
-            <h3 className="text-2xl sm:text-3xl font-bold mb-4">
-              Core <span className="gradient-text">Values</span>
-            </h3>
-            <p className="text-lg text-neutral-300 max-w-2xl mx-auto">
-              The principles that shape my approach to development and collaboration
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 mb-16">
-            {coreValues.map((value, index) => (
-              <motion.div
-                key={index}
-                className={`card-glass border-2 ${value.borderColor} hover:shadow-lg hover:shadow-${value.color.split('-')[1]}-500/20 transition-all duration-300 group`}
-                variants={cardVariants}
-                whileHover="hover"
-              >
-                <div className={`${value.bgColor} w-12 h-12 rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300 gentle-bounce`}>
-                  <value.icon className={`w-6 h-6 ${value.color}`} />
-                </div>
-                <h4 className="text-lg font-bold text-neutral-100 mb-3">{value.title}</h4>
-                <p className="text-sm text-neutral-300 leading-relaxed">{value.description}</p>
-              </motion.div>
-            ))}
-          </div>
-        </motion.div>
 
         {/* Interests & Hobbies */}
         <motion.div variants={itemVariants}>
