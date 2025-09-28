@@ -60,9 +60,9 @@ const Home = () => {
       {/* Background Pattern */}
       <div className="absolute inset-0 chess-board-bg opacity-30"></div>
 
-      {/* Floating Chess Pieces - Hidden on mobile for better performance */}
+      {/* Floating Chess Pieces - Now visible on all screen sizes */}
       <motion.div
-        className="hidden sm:block absolute top-28 left-4 sm:left-10 text-primary-200 text-2xl sm:text-3xl lg:text-5xl"
+        className="absolute top-28 left-4 sm:left-10 text-primary-200 text-xl sm:text-2xl lg:text-5xl"
         variants={chessPieceVariants}
         initial="hidden"
         animate={["visible", "floating"]}
@@ -71,7 +71,7 @@ const Home = () => {
       </motion.div>
 
       <motion.div
-        className="hidden sm:block absolute top-40 right-4 sm:right-20 text-earth-300 text-xl sm:text-2xl lg:text-4xl"
+        className="absolute top-40 right-4 sm:right-20 text-earth-300 text-lg sm:text-xl lg:text-4xl"
         variants={chessPieceVariants}
         initial="hidden"
         animate={["visible", "floating"]}
@@ -81,7 +81,7 @@ const Home = () => {
       </motion.div>
 
       <motion.div
-        className="hidden md:block absolute bottom-32 left-4 sm:left-20 text-primary-300 text-lg sm:text-xl lg:text-3xl"
+        className="absolute bottom-32 left-4 sm:left-20 text-primary-300 text-base sm:text-lg lg:text-3xl"
         variants={chessPieceVariants}
         initial="hidden"
         animate={["visible", "floating"]}
@@ -91,7 +91,7 @@ const Home = () => {
       </motion.div>
 
       <motion.div
-        className="hidden md:block absolute bottom-40 right-4 sm:right-16 text-earth-400 text-lg sm:text-xl lg:text-3xl"
+        className="absolute bottom-40 right-4 sm:right-16 text-earth-400 text-base sm:text-lg lg:text-3xl"
         variants={chessPieceVariants}
         initial="hidden"
         animate={["visible", "floating"]}
