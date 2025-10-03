@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { ChevronDown, Github, Linkedin, Mail, MessageSquare, ArrowDown } from 'lucide-react';
-import profileImage from '../../images/me.PNG';
+import profileImage from '../../images/Me.JPG';
 
 const Home = () => {
   const containerVariants = {
@@ -118,7 +118,8 @@ const Home = () => {
             <img
               src={profileImage}
               alt="Stephen Ekwueme"
-              className="relative w-48 h-48 sm:w-56 sm:h-56 lg:w-64 lg:h-64 xl:w-72 xl:h-72 rounded-full object-cover border-6 border-white shadow-2xl shadow-primary-500/60 transition-all duration-500 group-hover:scale-110 group-hover:shadow-3xl group-hover:shadow-primary-500/80"
+              className="relative w-48 h-48 sm:w-56 sm:h-56 lg:w-64 lg:h-64 xl:w-72 xl:h-72 rounded-full object-cover object-center border-6 border-white shadow-2xl shadow-primary-500/60 transition-all duration-500 group-hover:scale-110 group-hover:shadow-3xl group-hover:shadow-primary-500/80"
+              style={{ objectPosition: 'center top' }}
             />
             <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-primary-600/15 to-earth-600/15 group-hover:from-primary-600/20 group-hover:to-earth-600/20 transition-all duration-300"></div>
             <div className="absolute -bottom-3 -right-3 w-10 h-10 bg-green-500 rounded-full border-4 border-white flex items-center justify-center shadow-lg">
@@ -137,7 +138,7 @@ const Home = () => {
             </span>
           </h1>
           <p className="text-lg sm:text-xl lg:text-2xl text-neutral-300 font-semibold tracking-wide">
-            Front-End Developer || Entrepreneur
+            Front-End Developer || Entrepreneur || Chess Enthusiast
           </p>
         </motion.div>
 

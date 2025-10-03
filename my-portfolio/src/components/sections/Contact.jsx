@@ -288,7 +288,7 @@ const Contact = () => {
                       onChange={handleInputChange}
                       required
                       className="w-full px-4 py-3 border border-neutral-600 bg-neutral-700 text-neutral-100 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors duration-300"
-                      placeholder="your.email@example.com"
+                      placeholder="Your.email@example.com"
                     />
                   </div>
                 </div>
