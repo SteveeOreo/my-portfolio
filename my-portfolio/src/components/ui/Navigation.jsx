@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, ChevronUp } from 'lucide-react';
+import { Menu, X, ChevronUp, Crown } from 'lucide-react';
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -123,7 +123,7 @@ const Navigation = () => {
             </motion.a>
 
             {/* Desktop Navigation */}
-            <div className="hidden md:flex items-center space-x-10">
+            <div className="hidden md:flex items-center space-x-8 lg:space-x-10">
               {navItems.map((item) => (
                 <motion.a
                   key={item.id}
@@ -132,7 +132,7 @@ const Navigation = () => {
                     e.preventDefault();
                     handleNavClick(item.href);
                   }}
-                  className={`relative font-semibold text-base transition-colors duration-300 hover:text-primary-500 ${
+                  className={`relative font-semibold text-base lg:text-lg transition-colors duration-300 hover:text-primary-500 ${
                     activeSection === item.id
                       ? 'text-primary-500'
                       : scrolled
@@ -186,29 +186,30 @@ const Navigation = () => {
 
             {/* Mobile Menu */}
             <motion.div
-              className="fixed top-0 right-0 bottom-0 z-50 w-80 max-w-[85vw] bg-neutral-900 border-l border-neutral-800 shadow-2xl md:hidden"
+              className="fixed top-0 right-0 bottom-0 z-50 w-80 max-w-[90vw] bg-neutral-900/95 backdrop-blur-md border-l border-neutral-800 shadow-2xl md:hidden overflow-y-auto"
               variants={menuVariants}
               initial="closed"
               animate="open"
               exit="closed"
             >
-              <div className="p-6">
+              <div className="p-6 min-h-full flex flex-col">
                 {/* Mobile Menu Header */}
-                <div className="flex items-center justify-between mb-8">
+                <div className="flex items-center justify-between mb-8 flex-shrink-0">
                   <div className="flex items-center space-x-2">
                     <Crown className="w-6 h-6 text-primary-600" />
                     <span className="text-xl font-bold text-neutral-100">Stephen</span>
                   </div>
                   <button
                     onClick={() => setIsOpen(false)}
-                    className="p-2 rounded-lg hover:bg-neutral-800 transition-colors duration-300"
+                    className="p-2 rounded-lg hover:bg-neutral-800 transition-colors duration-300 touch-target"
+                    aria-label="Close menu"
                   >
                     <X className="w-6 h-6 text-neutral-200" />
                   </button>
                 </div>
 
                 {/* Mobile Navigation Items */}
-                <nav className="space-y-4 sm:space-y-6">
+                <nav className="space-y-2 flex-grow">
                   {navItems.map((item, index) => (
                     <motion.a
                       key={item.id}
@@ -217,9 +218,9 @@ const Navigation = () => {
                         e.preventDefault();
                         handleNavClick(item.href);
                       }}
-                      className={`block text-lg font-medium transition-colors duration-300 hover:text-primary-500 py-2 touch-target ${
+                      className={`block text-lg sm:text-xl font-medium transition-colors duration-300 hover:text-primary-500 py-4 px-2 rounded-lg hover:bg-neutral-800/50 touch-target ${
                         activeSection === item.id
-                          ? 'text-primary-500'
+                          ? 'text-primary-500 bg-neutral-800/30'
                           : 'text-neutral-300'
                       }`}
                       variants={navItemVariants}
@@ -234,7 +235,7 @@ const Navigation = () => {
 
                 {/* Mobile CTA */}
                 <motion.div
-                  className="mt-6 sm:mt-8 pt-4 sm:pt-6 border-t border-neutral-800"
+                  className="mt-6 pt-6 border-t border-neutral-800 flex-shrink-0"
                   variants={navItemVariants}
                   custom={navItems.length}
                 >
@@ -244,7 +245,7 @@ const Navigation = () => {
                       e.preventDefault();
                       handleNavClick('#contact');
                     }}
-                    className="block w-full text-center px-6 py-3 bg-primary-600 hover:bg-primary-700 text-white font-semibold rounded-lg transition-colors duration-300 touch-target"
+                    className="block w-full text-center px-6 py-4 bg-primary-600 hover:bg-primary-700 text-white font-semibold text-lg rounded-lg transition-colors duration-300 touch-target"
                   >
                     Let's Talk
                   </a>
@@ -252,12 +253,12 @@ const Navigation = () => {
 
                 {/* Chess Quote - Mobile */}
                 <motion.div
-                  className="mt-8 p-4 bg-gradient-to-r from-neutral-800 to-neutral-900 rounded-xl border border-neutral-700"
+                  className="mt-6 p-4 bg-gradient-to-r from-neutral-800 to-neutral-900 rounded-xl border border-neutral-700 flex-shrink-0"
                   variants={navItemVariants}
                   custom={navItems.length + 1}
                 >
                   <div className="text-2xl mb-2 text-center">♚</div>
-                  <p className="text-sm text-neutral-400 italic text-center">
+                  <p className="text-sm text-neutral-400 italic text-center leading-relaxed">
                     "Every move should have a purpose."
                   </p>
                 </motion.div>
