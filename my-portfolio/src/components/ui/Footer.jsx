@@ -107,63 +107,10 @@ const Footer = () => {
               in agriculture and technology.
             </p>
 
-            {/* Chess Strategy Quote */}
-            <div className="bg-gradient-to-r from-primary-900/30 to-earth-900/30 rounded-xl p-6 border border-primary-800/40">
-              <div className="flex items-start space-x-4">
-                <div className="text-2xl text-primary-400 mt-1">♚</div>
-                <div>
-                  <blockquote className="text-neutral-200 italic text-sm leading-relaxed">
-                    "In chess and in code, every move should advance your position toward victory."
-                  </blockquote>
-                  <cite className="text-primary-400 text-sm font-medium block mt-3">
-                    — Development Philosophy
-                  </cite>
-                </div>
-              </div>
-            </div>
+           
           </motion.div>
 
          
-
-          {/* Resources */}
-          <motion.div variants={itemVariants} className="space-y-6">
-            <h3 className="text-xl font-semibold text-primary-400">Resources</h3>
-            <div className="space-y-4" >
-              {/* CV Download */}
-              <motion.a
-                href="/cv/stephen-ekwueme-cv.pdf"
-                download
-                className="flex items-center space-x-3 p-3 bg-neutral-800/60 rounded-xl hover:bg-neutral-700/60 transition-all duration-300 group border border-neutral-700/50"
-                whileHover={{ scale: 1.02, y: -2 }}
-                whileTap={{ scale: 0.98 }}
-              >
-                <div className="bg-primary-900/60 p-2 rounded-lg group-hover:bg-primary-800/60 transition-colors duration-300">
-                  <Download className="w-5 h-5 text-primary-400" />
-                </div>
-                <div>
-                  <p className="text-neutral-100 font-semibold text-sm">Download CV</p>
-                  <p className="text-xs text-neutral-400">PDF • Updated {new Date().getFullYear()}</p>
-                </div>
-              </motion.a>
-
-              {/* Pitch Video */}
-              <motion.a
-                href="#pitch-video"
-                className="flex items-center space-x-3 p-3 bg-neutral-800/60 rounded-xl hover:bg-neutral-700/60 transition-all duration-300 group border border-neutral-700/50"
-                whileHover={{ scale: 1.02, y: -2 }}
-                whileTap={{ scale: 0.98 }}
-              >
-                <div className="bg-earth-900/60 p-2 rounded-lg group-hover:bg-earth-800/60 transition-colors duration-300">
-                  <Play className="w-5 h-5 text-earth-400" />
-                </div>
-                <div>
-                  <p className="text-neutral-100 font-semibold text-sm">Pitch Video</p>
-                  <p className="text-xs text-neutral-400">2 min introduction</p>
-                </div>
-              </motion.a>
-            </div>
-            
-          </motion.div>
         </div>
 
         {/* Divider with Chess Pieces */}
@@ -200,13 +147,11 @@ const Footer = () => {
 
           <div className="flex items-center space-x-3 text-xs text-neutral-400">
             <span className="flex items-center space-x-1">
-              <span>Made with</span>
-              <Heart className="w-3 h-3 text-red-400 fill-current" />
-              <span>and ☕</span>
+             
             </span>
             <span>•</span>
             <span className="flex items-center space-x-1">
-              <span>Powered by React & Passion</span>
+              <span>Powered by React & Tailwind Css </span>
             </span>
           </div>
         </motion.div>

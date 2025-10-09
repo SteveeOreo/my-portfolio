@@ -131,9 +131,9 @@ const Contact = () => {
     },
     {
       icon: Phone,
-      title: "Response Time",
-      content: "Within 24 hours",
-      href: null,
+      title: "Phone",
+      content: "+2348131160033",
+      href: "tel:+2348131160033",
       color: "text-green-600",
       bgColor: "bg-green-50"
     }
@@ -188,64 +188,57 @@ const Contact = () => {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
-          {/* Contact Information */}
-          <motion.div className="space-y-6 sm:space-y-8" variants={itemVariants}>
-            <div>
-              <h3 className="text-xl sm:text-2xl font-bold text-neutral-100 mb-4 sm:mb-6">Get In Touch</h3>
-              <p className="text-sm sm:text-base text-neutral-300 mb-6 sm:mb-8 leading-relaxed">
-                I'm always excited to discuss new opportunities and challenges. Whether you're a
-                startup looking to build from scratch, an established company seeking to innovate,
-                or a fellow developer wanting to collaborate, let's start a conversation.
-              </p>
-            </div>
+        <div className="max-w-4xl mx-auto">
+          {/* Contact Information - Centralized */}
+          <motion.div className="text-center space-y-8" variants={itemVariants}>
+            
 
-            {/* Contact Cards */}
-            <div className="space-y-3 sm:space-y-4">
+            {/* Contact Cards - Centered Grid */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-3xl mx-auto">
               {contactInfo.map((info, index) => (
                 <motion.div
                   key={index}
-                  className="flex items-center space-x-3 sm:space-x-4 p-3 sm:p-4 bg-neutral-800 rounded-xl border border-neutral-700 hover:border-primary-500 hover:shadow-lg transition-all duration-300"
+                  className="flex flex-col items-center text-center space-y-3 p-6 bg-neutral-800 rounded-xl border border-neutral-700 hover:border-primary-500 hover:shadow-lg transition-all duration-300"
                   variants={cardVariants}
                   whileHover="hover"
                 >
-                  <div className={`bg-neutral-900 p-2 sm:p-3 rounded-lg`}>
-                    <info.icon className={`w-5 h-5 sm:w-6 sm:h-6 ${info.color}`} />
+                  <div className={`bg-neutral-900 p-3 rounded-lg`}>
+                    <info.icon className={`w-6 h-6 ${info.color}`} />
                   </div>
                   <div>
-                    <h4 className="font-semibold text-neutral-100 text-sm sm:text-base">{info.title}</h4>
+                    <h4 className="font-semibold text-neutral-100 text-base">{info.title}</h4>
                     {info.href ? (
                       <a
                         href={info.href}
-                        className="text-neutral-300 hover:text-primary-400 transition-colors duration-300 text-sm sm:text-base"
+                        className="text-neutral-300 hover:text-primary-400 transition-colors duration-300 text-sm"
                       >
                         {info.content}
                       </a>
                     ) : (
-                      <p className="text-neutral-300 text-sm sm:text-base">{info.content}</p>
+                      <p className="text-neutral-300 text-sm">{info.content}</p>
                     )}
                   </div>
                 </motion.div>
               ))}
             </div>
 
-            {/* Social Links */}
-            <div>
-              <h4 className="font-semibold text-neutral-100 mb-3 sm:mb-4 text-sm sm:text-base">Follow My Work</h4>
-              <div className="flex space-x-3 sm:space-x-4">
+            {/* Social Links - Centered */}
+            <div className="text-center">
+              <h4 className="font-semibold text-neutral-100 mb-6 text-lg">Follow My Work</h4>
+              <div className="flex justify-center space-x-6">
                 {socialLinks.map((social, index) => (
                   <motion.a
                     key={index}
                     href={social.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className={`p-2.5 sm:p-3 bg-neutral-800 text-neutral-300 rounded-lg transition-all duration-300 ${social.color} hover:text-white hover:shadow-lg`}
+                    className={`p-4 bg-neutral-800 text-neutral-300 rounded-xl transition-all duration-300 ${social.color} hover:text-white hover:shadow-lg border border-neutral-700 hover:border-primary-500`}
                     whileHover={{ y: -5, scale: 1.1 }}
                     whileTap={{ scale: 0.95 }}
                     aria-label={social.name}
                     title={social.name}
                   >
-                    <social.icon className="w-5 h-5 sm:w-6 sm:h-6" />
+                    <social.icon className="w-6 h-6" />
                   </motion.a>
                 ))}
               </div>
@@ -254,131 +247,7 @@ const Contact = () => {
            
           </motion.div>
 
-          {/* Contact Form */}
-          <motion.div variants={itemVariants}>
-            <div className="bg-neutral-800 rounded-2xl p-8 border border-neutral-700 shadow-sm">
-              <h3 className="text-2xl font-bold text-neutral-100 mb-6">Send a Message</h3>
-
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  <div>
-                    <label htmlFor="name" className="block text-sm font-medium text-neutral-300 mb-2">
-                      Name *
-                    </label>
-                    <input
-                      type="text"
-                      id="name"
-                      name="name"
-                      value={formData.name}
-                      onChange={handleInputChange}
-                      required
-                      className="w-full px-4 py-3 border border-neutral-600 bg-neutral-700 text-neutral-100 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors duration-300"
-                      placeholder="Your full name"
-                    />
-                  </div>
-                  <div>
-                    <label htmlFor="email" className="block text-sm font-medium text-neutral-300 mb-2">
-                      Email *
-                    </label>
-                    <input
-                      type="email"
-                      id="email"
-                      name="email"
-                      value={formData.email}
-                      onChange={handleInputChange}
-                      required
-                      className="w-full px-4 py-3 border border-neutral-600 bg-neutral-700 text-neutral-100 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors duration-300"
-                      placeholder="Your.email@example.com"
-                    />
-                  </div>
-                </div>
-
-                <div>
-                  <label htmlFor="subject" className="block text-sm font-medium text-neutral-300 mb-2">
-                    Subject *
-                  </label>
-                  <input
-                    type="text"
-                    id="subject"
-                    name="subject"
-                    value={formData.subject}
-                    onChange={handleInputChange}
-                    required
-                    className="w-full px-4 py-3 border border-neutral-600 bg-neutral-700 text-neutral-100 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors duration-300"
-                    placeholder="Project inquiry, collaboration, etc."
-                  />
-                </div>
-
-                <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-neutral-300 mb-2">
-                    Message *
-                  </label>
-                  <textarea
-                    id="message"
-                    name="message"
-                    rows="5"
-                    value={formData.message}
-                    onChange={handleInputChange}
-                    required
-                    className="w-full px-4 py-3 border border-neutral-600 bg-neutral-700 text-neutral-100 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors duration-300 resize-none"
-                    placeholder="Tell me about your project, ideas, or how we can work together..."
-                  />
-                </div>
-
-                {/* Submit Status */}
-                {submitStatus && (
-                  <motion.div
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    className={`p-4 rounded-lg ${
-                      submitStatus === 'success'
-                        ? 'bg-green-900 text-green-300 border border-green-700'
-                        : 'bg-red-900 text-red-300 border border-red-700'
-                    }`}
-                  >
-                    <div className="flex items-center space-x-2">
-                      {submitStatus === 'success' ? (
-                        <CheckCircle className="w-5 h-5" />
-                      ) : (
-                        <AlertCircle className="w-5 h-5" />
-                      )}
-                      <span className="font-medium">
-                        {submitStatus === 'success'
-                          ? 'Message sent successfully! I\'ll get back to you within 24 hours.'
-                          : 'Failed to send message. Please try again or contact me directly.'}
-                      </span>
-                    </div>
-                  </motion.div>
-                )}
-
-                {/* Submit Button */}
-                <motion.button
-                  type="submit"
-                  disabled={isSubmitting}
-                  className="w-full bg-primary-600 hover:bg-primary-700 disabled:bg-primary-400 text-white font-semibold py-4 px-6 rounded-lg transition-all duration-300 hover:shadow-lg hover:shadow-primary-600/25 disabled:cursor-not-allowed flex items-center justify-center space-x-2"
-                  whileHover={{ scale: isSubmitting ? 1 : 1.02 }}
-                  whileTap={{ scale: isSubmitting ? 1 : 0.98 }}
-                >
-                  {isSubmitting ? (
-                    <>
-                      <Loader2 className="w-5 h-5 animate-spin" />
-                      <span>Sending...</span>
-                    </>
-                  ) : (
-                    <>
-                      <Send className="w-5 h-5" />
-                      <span>Send Message</span>
-                    </>
-                  )}
-                </motion.button>
-              </form>
-
-              {/* Form Note */}
-              <p className="text-sm text-neutral-400 mt-4 text-center">
-                * Required fields. Your information is safe and will never be shared.
-              </p>
-            </div>
-          </motion.div>
+          
         </div>
 
 

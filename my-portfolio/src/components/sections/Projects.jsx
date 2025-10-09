@@ -133,18 +133,18 @@ const Projects = () => {
           <div className="inline-block px-6 py-2 bg-primary-900/30 rounded-full text-primary-400 font-medium text-sm mb-4">
             My Work
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 text-enhanced-xl text-high-contrast">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">
             Featured <span className="gradient-text">Projects</span>
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-primary-600 to-earth-600 mx-auto mb-6"></div>
-          <p className="text-lg sm:text-xl text-enhanced-lg text-medium-contrast max-w-3xl mx-auto">
-            A showcase of my recent work, demonstrating my passion for creating 
-            impactful digital solutions.
+          <p className="text-lg sm:text-xl text-neutral-300 max-w-3xl mx-auto">
+            A showcase of digital solutions focused on agriculture, e-commerce, and user empowerment.
+            Each project reflects strategic thinking and innovative problem-solving.
           </p>
         </motion.div>
 
         {/* Projects Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-6 sm:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
           {projects.map((project) => (
             <motion.div
               key={project.id}
@@ -154,7 +154,7 @@ const Projects = () => {
             >
               <motion.div variants={cardHoverVariants}>
                 {/* Project Image/Icon */}
-                <div className="relative h-40 sm:h-48 bg-gradient-to-br from-primary-900 to-earth-900 flex items-center justify-center overflow-hidden">
+                <div className="relative h-48 bg-gradient-to-br from-primary-900 to-earth-900 flex items-center justify-center overflow-hidden">
                   {typeof project.image === 'string' ? (
                     project.image.length > 2 ? (
                       <img 
@@ -163,7 +163,7 @@ const Projects = () => {
                         className="w-full h-full object-cover object-center transition-transform duration-300 group-hover:scale-105"
                       />
                     ) : (
-                      <div className="text-4xl sm:text-6xl filter drop-shadow-lg">
+                      <div className="text-6xl filter drop-shadow-lg">
                         {project.image}
                       </div>
                     )
@@ -176,33 +176,33 @@ const Projects = () => {
                   )}
 
                   {/* Category Badge */}
-                  <div className="absolute top-3 left-3 sm:top-4 sm:left-4 flex items-center space-x-1 bg-primary-900/80 backdrop-blur-sm px-2 py-1 sm:px-3 sm:py-1 rounded-full text-xs sm:text-sm font-medium text-primary-300 border border-primary-700/50 shadow-lg">
+                  <div className="absolute top-4 left-4 flex items-center space-x-1 bg-primary-900/80 backdrop-blur-sm px-3 py-1 rounded-full text-sm font-medium text-primary-300 border border-primary-700/50 shadow-lg">
                     {getCategoryIcon(project.category)}
-                    <span className="hidden sm:inline">{project.category}</span>
+                    <span>{project.category}</span>
                   </div>
 
                   {/* Hover Overlay */}
                   <div className="absolute inset-0 bg-gradient-to-t from-primary-900/60 to-black/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                     <div className="bg-black/60 p-2 rounded-full opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300 delay-100">
-                      <ExternalLink className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
+                      <ExternalLink className="w-6 h-6 text-white" />
                     </div>
                   </div>
                 </div>
 
                 {/* Project Content */}
-                <div className="p-4 sm:p-6 bg-gradient-to-b from-neutral-800/50 to-neutral-900/80">
-                  <h3 className="text-lg sm:text-xl font-bold text-neutral-100 mb-2 sm:mb-3 group-hover:text-primary-500 transition-colors duration-300">
+                <div className="p-6 bg-gradient-to-b from-neutral-800/50 to-neutral-900/80">
+                  <h3 className="text-xl font-bold text-neutral-100 mb-3 group-hover:text-primary-500 transition-colors duration-300">
                     {project.title}
                   </h3>
 
-                  <p className="text-sm sm:text-base text-neutral-300 mb-3 sm:mb-4 line-clamp-3">
+                  <p className="text-neutral-300 mb-4 line-clamp-3">
                     {project.description}
                   </p>
 
                   {/* Key Highlights */}
-                  <div className="mb-3 sm:mb-4">
-                    <h4 className="text-xs sm:text-sm font-semibold text-neutral-300 mb-2">Key Features:</h4>
-                    <ul className="text-xs sm:text-sm text-neutral-300 space-y-1">
+                  <div className="mb-4">
+                    <h4 className="text-sm font-semibold text-neutral-300 mb-2">Key Features:</h4>
+                    <ul className="text-sm text-neutral-300 space-y-1">
                       {project.highlights.slice(0, 2).map((highlight, index) => (
                         <li key={index} className="flex items-center">
                           <ChevronRight className="w-3 h-3 text-primary-500 mr-1 flex-shrink-0" />
@@ -213,7 +213,7 @@ const Projects = () => {
                   </div>
 
                   {/* Technology Tags */}
-                  <div className="flex flex-wrap gap-1.5 sm:gap-2 mb-4 sm:mb-6">
+                  <div className="flex flex-wrap gap-2 mb-6">
                     {project.tags.map((tag, index) => (
                       <span
                         key={index}
@@ -225,12 +225,12 @@ const Projects = () => {
                   </div>
 
                   {/* Project Links */}
-                  <div className="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-3">
+                  <div className="flex space-x-3">
                     <motion.a
                       href={project.github}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center justify-center space-x-2 px-3 sm:px-4 py-2 bg-neutral-800 hover:bg-neutral-700 text-neutral-300 rounded-lg transition-all duration-300 text-sm font-medium border border-neutral-700 hover:border-neutral-600 shadow-md hover:shadow-lg"
+                      className="flex items-center space-x-2 px-4 py-2 bg-neutral-800 hover:bg-neutral-700 text-neutral-300 rounded-lg transition-all duration-300 text-sm font-medium border border-neutral-700 hover:border-neutral-600 shadow-md hover:shadow-lg"
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
                     >
@@ -242,7 +242,7 @@ const Projects = () => {
                       href={project.live}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center justify-center space-x-2 px-3 sm:px-4 py-2 bg-gradient-to-r from-primary-600 to-primary-700 hover:from-primary-500 hover:to-primary-600 text-white rounded-lg transition-all duration-300 text-sm font-medium border border-primary-500 hover:border-primary-400 shadow-md hover:shadow-primary-500/30"
+                      className="flex items-center space-x-2 px-4 py-2 bg-gradient-to-r from-primary-600 to-primary-700 hover:from-primary-500 hover:to-primary-600 text-white rounded-lg transition-all duration-300 text-sm font-medium border border-primary-500 hover:border-primary-400 shadow-md hover:shadow-primary-500/30"
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
                     >
@@ -258,22 +258,22 @@ const Projects = () => {
 
         {/* View More Section */}
         <motion.div
-          className="text-center mt-12 sm:mt-16"
+          className="text-center mt-16"
           variants={itemVariants}
         >
-          <div className="p-6 sm:p-8 bg-neutral-800/30 backdrop-blur-sm rounded-2xl border border-neutral-700/50 max-w-3xl mx-auto">
-            <p className="text-neutral-300 mb-4 sm:mb-6 text-base sm:text-lg">
+          <div className="p-8 bg-neutral-800/30 backdrop-blur-sm rounded-2xl border border-neutral-700/50 max-w-3xl mx-auto">
+            <p className="text-neutral-300 mb-6 text-lg">
               Interested in seeing more of my work?
             </p>
             <motion.a
               href="https://github.com/SteveeOreo"
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-gradient-to-r from-primary-600 to-primary-700 hover:from-primary-500 hover:to-primary-600 text-white px-5 sm:px-6 py-3 rounded-lg transition-all duration-300 text-sm sm:text-base font-medium inline-flex items-center space-x-2 shadow-lg hover:shadow-primary-500/30 border border-primary-500 hover:border-primary-400"
+              className="bg-gradient-to-r from-primary-600 to-primary-700 hover:from-primary-500 hover:to-primary-600 text-white px-6 py-3 rounded-lg transition-all duration-300 text-base font-medium inline-flex items-center space-x-2 shadow-lg hover:shadow-primary-500/30 border border-primary-500 hover:border-primary-400"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              <Github className="w-4 h-4 sm:w-5 sm:h-5" />
+              <Github className="w-5 h-5" />
               <span>View GitHub Profile</span>
             </motion.a>
           </div>

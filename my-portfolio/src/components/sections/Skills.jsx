@@ -184,22 +184,6 @@ const Skills = () => {
             </motion.div>
           ))}
         </div>
-
-        {/* Chess Strategy Quote */}
-        <motion.div
-          className="mt-20 text-center"
-          variants={itemVariants}
-        >
-          <div className="bg-gradient-to-r from-primary-900 to-earth-900 rounded-2xl p-8 border border-primary-700">
-            <div className="text-4xl mb-4">♚</div>
-            <blockquote className="text-lg sm:text-xl text-neutral-300 italic mb-4 max-w-3xl mx-auto">
-              "In chess, as in coding, every move should have a purpose. I approach development
-              with the same strategic mindset - analyzing the board, anticipating challenges,
-              and executing solutions that create lasting impact."
-            </blockquote>
-            <cite className="text-primary-400 font-semibold">— My Development Philosophy</cite>
-          </div>
-        </motion.div>
       </motion.div>
     </section>
   );

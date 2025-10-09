@@ -136,112 +136,120 @@ const About = () => {
           </p>
         </motion.div>
 
-        {/* Main About Content */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
-          {/* Left Column - Personal Story */}
+        {/* Main About Content - Optimized Layout */}
+        <div className="space-y-8">
+          {/* My Journey Section - Full Width */}
           <motion.div variants={itemVariants}>
-            <div className="prose prose-lg max-w-none">
-              <div className="card-glass shimmer">
-                <div className="flex items-center mb-4">
-                  <div className="text-3xl mr-3 gentle-bounce">♚</div>
-                  <h3 className="text-xl font-bold text-neutral-100">My Journey</h3>
-                </div>
+            <div className="card-glass shimmer">
+              <div className="flex items-center mb-6">
+                <div className="text-3xl mr-3 gentle-bounce">♚</div>
+                <h3 className="text-2xl font-bold text-neutral-100">My Journey</h3>
+              </div>
 
-                <div className="space-y-4 text-neutral-300 leading-relaxed fade-in-up">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <div className="space-y-4 text-neutral-300 leading-relaxed">
                   <p className="text-sm">
                     My journey began with the simple satisfaction of buying and reselling consumable products as a kid,
-                    which continued developing as I grew up. This led me to study and ultimately earn a Bachelor’s degree in Entrepreneurship Studies & AgriBusiness. 
+                    which continued developing as I grew up. This led me to study and ultimately earn a Bachelor's degree in Entrepreneurship Studies & AgriBusiness. 
                     During this time, I built a solid foundation in business operations, financial principles, and strategic thinking. 
                     After graduation, I served as a Personal Assistant to the Director of Administration at the Ministry of Public Utilities & Water Resources. 
                     In this role, I enhanced my organizational, communication, and leadership skills, learning to manage priorities, streamline processes, and support high-level decision-making.
                   </p>
-
                   <p className="text-sm">
-                   While excelling in administration, my curiosity about technology kept growing. I wanted to do more than just manage systems; I wanted to build them. 
-                   This desire prompted my transition into tech through ALX Africa’s Front-End Software Engineering program. Through months of hands-on training, I mastered HTML, CSS, JavaScript, React, and TailwindCSS, gaining experience working in agile development teams.
-                   Most recently, I completed the AI for Developers program, where I explored how artificial intelligence can help developers create smarter, more efficient applications. Today, I combine my business knowledge, administrative experience, and technical skills to develop impactful digital solutions. <br/>
-                   <br/> My goal is to create platforms that enhance access, efficiency, and opportunities, especially in agriculture, e-commerce, and education for small-scale farmers.
-                   For me, coding is more than just writing lines of code; it’s about solving real-world problems, one project at a time.
+                    While excelling in administration, my curiosity about technology kept growing. I wanted to do more than just manage systems; I wanted to build them. 
+                    This desire prompted my transition into tech through ALX Africa's Front-End Software Engineering program. Through months of hands-on training, I mastered HTML, CSS, JavaScript, React, and TailwindCSS, gaining experience working in agile development teams.
                   </p>
+                   
                 </div>
 
-                {/* Chess Philosophy Box */}
-                <div className="mt-6 p-4 bg-gradient-to-r from-primary-900 to-earth-900 rounded-xl border border-primary-700">
-                  <div className="flex items-center mb-2">
-                    <Target className="w-4 h-4 text-primary-600 mr-2" />
-                    <span className="font-semibold text-primary-400 text-sm">Chess & Life Philosophy</span>
-                  </div>
-                  <p className="text-xs text-neutral-300 italic">
-                    "The journey to success begins not just with any step, but rather one step taken towards the right direction."
+                <div className="space-y-4 text-neutral-300 leading-relaxed">
+                  <p className="text-sm">
+                   Most recently, I completed the AI for Developers program, where I explored how artificial intelligence can help developers create smarter, more efficient applications. Today, I combine my business knowledge, administrative experience, and technical skills to develop impactful digital solutions.
+                  </p>
+                  <p className="text-sm">
+                   My goal is to create platforms that enhance access, efficiency, and opportunities, especially in agriculture, e-commerce, and education for small-scale farmers.
+                   For me, coding is more than just writing lines of code; it's about solving real-world problems, one project at a time.
                   </p>
                 </div>
+              </div>
+
+              {/* Chess Philosophy Box */}
+              <div className="mt-8 p-4 bg-gradient-to-r from-primary-900 to-earth-900 rounded-xl border border-primary-700">
+                <div className="flex items-center mb-2">
+                  <Target className="w-4 h-4 text-primary-600 mr-2" />
+                  <span className="font-semibold text-primary-400 text-sm">Chess & Life Philosophy</span>
+                </div>
+                <p className="text-xs text-neutral-300 italic">
+                  "The journey to success begins not just with any step, but rather one step taken towards the right direction."
+                </p>
               </div>
             </div>
           </motion.div>
 
-          {/* Right Column - Core Values */}
-          <motion.div variants={itemVariants}>
-            <div className="card-glass shimmer">
-              <div className="flex items-center mb-6">
-                <h3 className="text-2xl font-bold text-neutral-100">Core Values</h3>
-              </div>
-              <p className="text-neutral-300 mb-6">
-                The principles that guide my approach to development and collaboration.
-              </p>
+          {/* Core Values and Beyond Code - Side by Side */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            {/* Core Values Section */}
+            <motion.div variants={itemVariants}>
+              <div className="card-glass shimmer h-full">
+                <div className="flex items-center mb-6">
+                  <h3 className="text-2xl font-bold text-neutral-100">Core Values</h3>
+                </div>
+                <p className="text-neutral-300 mb-6">
+                  The principles that guide my approach to development and collaboration.
+                </p>
 
-              <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
-                {coreValues.map((value, index) => (
-                  <motion.div
-                    key={index}
-                    variants={itemVariants}
-                    className="flex flex-col items-center text-center p-4 rounded-lg bg-neutral-800/30 border border-neutral-700/50 hover:border-primary-500/50 transition-all duration-300 group"
-                    whileHover={{ y: -2, scale: 1.02 }}
-                  >
-                    <div className="p-3 rounded-full bg-gradient-to-r from-primary-600 to-earth-600 mb-3 group-hover:scale-110 transition-transform duration-300">
-                      <value.icon className="w-5 h-5 text-white" />
-                    </div>
-                    <span className="text-sm font-medium text-neutral-100 group-hover:text-primary-400 transition-colors duration-300">
-                      {value.title}
-                    </span>
-                  </motion.div>
-                ))}
+                <div className="grid grid-cols-2 gap-4">
+                  {coreValues.map((value, index) => (
+                    <motion.div
+                      key={index}
+                      variants={itemVariants}
+                      className="flex flex-col items-center text-center p-4 rounded-lg bg-neutral-800/30 border border-neutral-700/50 hover:border-primary-500/50 transition-all duration-300 group"
+                      whileHover={{ y: -2, scale: 1.02 }}
+                    >
+                      <div className="p-3 rounded-full bg-gradient-to-r from-primary-600 to-earth-600 mb-3 group-hover:scale-110 transition-transform duration-300">
+                        <value.icon className="w-5 h-5 text-white" />
+                      </div>
+                      <span className="text-sm font-medium text-neutral-100 group-hover:text-primary-400 transition-colors duration-300">
+                        {value.title}
+                      </span>
+                    </motion.div>
+                  ))}
+                </div>
               </div>
-            </div>
-          </motion.div>
+            </motion.div>
+
+            {/* Beyond Code Section */}
+            <motion.div variants={itemVariants}>
+              <div className="card-glass shimmer h-full">
+                <div className="flex items-center mb-6">
+                  <h3 className="text-2xl font-bold text-neutral-100">Beyond Code</h3>
+                </div>
+                <p className="text-neutral-300 mb-6">
+                  What drives my passion and shapes my perspective as a developer
+                </p>
+
+                <div className="grid grid-cols-2 gap-4">
+                  {interests.map((interest, index) => (
+                    <motion.div
+                      key={index}
+                      className="flex flex-col items-center text-center p-4 rounded-lg bg-neutral-800/30 border border-neutral-700/50 hover:border-primary-500/50 transition-all duration-300 group"
+                      variants={cardVariants}
+                      whileHover="hover"
+                    >
+                      <div className="p-3 rounded-full bg-gradient-to-r from-primary-600 to-earth-600 mb-3 group-hover:scale-110 transition-transform duration-300">
+                        <interest.icon className="w-5 h-5 text-white" />
+                      </div>
+                      <span className="text-sm font-medium text-neutral-100 group-hover:text-primary-400 transition-colors duration-300">
+                        {interest.title}
+                      </span>
+                    </motion.div>
+                  ))}
+                </div>
+              </div>
+            </motion.div>
+          </div>
         </div>
-
-        {/* Interests & Hobbies */}
-        <motion.div variants={itemVariants}>
-          <div className="text-center mb-12">
-            <h3 className="text-2xl sm:text-3xl font-bold mb-4">
-              Beyond <span className="gradient-text">Code</span>
-            </h3>
-            <p className="text-lg text-neutral-300 max-w-2xl mx-auto">
-              What drives my passion and shapes my perspective as a developer
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {interests.map((interest, index) => (
-              <motion.div
-                key={index}
-                className="card-glass hover:border-primary-400 hover:shadow-lg hover:shadow-primary-500/20 transition-all duration-300 group"
-                variants={cardVariants}
-                whileHover="hover"
-              >
-                <div className="flex items-start space-x-4">
-                  <div className="bg-primary-900 p-3 rounded-lg group-hover:scale-110 transition-transform duration-300 gentle-bounce">
-                    <interest.icon className="w-6 h-6 text-primary-600" />
-                  </div>
-                  <div>
-                    <h4 className="text-lg font-bold text-neutral-100 mb-2">{interest.title}</h4>
-                    <p className="text-neutral-300 leading-relaxed">{interest.description}</p>
-                  </div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </motion.div>
+        
       </motion.div>
     </section>
   );
