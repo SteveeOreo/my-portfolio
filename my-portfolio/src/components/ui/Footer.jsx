@@ -138,22 +138,12 @@ const Footer = () => {
 
         {/* Bottom Bar */}
         <motion.div
-          className="flex flex-col md:flex-row justify-between items-center space-y-3 md:space-y-0"
+          className="mt-6 pt-4 border-t border-neutral-800 text-center"
           variants={itemVariants}
         >
-          <div className="flex items-center space-x-2 text-xs text-neutral-400">
+          <div className="flex items-center justify-center space-x-2 text-xs text-neutral-500">
             <span>© {currentYear} Stephen Ekwueme. All rights reserved.</span>
-          </div>
-
-          <div className="flex items-center space-x-3 text-xs text-neutral-400">
-            <span className="flex items-center space-x-1">
-             
-            </span>
-            <span>•</span>
-            <span className="flex items-center space-x-1">
-              <span>Powered by React & Tailwind Css </span>
-            </span>
-          </div>
+          </div> 
         </motion.div>
 
         {/* Tech Stack Credits */}

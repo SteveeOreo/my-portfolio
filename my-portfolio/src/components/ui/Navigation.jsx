@@ -197,7 +197,7 @@ const Navigation = () => {
                 <div className="flex items-center justify-between mb-8 flex-shrink-0">
                   <div className="flex items-center space-x-2">
                     <Crown className="w-6 h-6 text-primary-600" />
-                    <span className="text-xl font-bold text-neutral-100">Stephen</span>
+                   
                   </div>
                   <button
                     onClick={() => setIsOpen(false)}

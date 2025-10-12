@@ -156,7 +156,7 @@ const Home = () => {
             href="https://docs.google.com/document/d/168bVLe3F6N5SKxa8cX8jE6KMvsdsKTJBurKep-yzkdk/edit?usp=sharing"
             target="_blank"
             rel="noopener noreferrer"
-            className="group relative overflow-hidden bg-primary-600 hover:bg-primary-700 text-white px-10 py-5 text-lg font-bold rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 inline-flex items-center justify-center min-w-[200px] border-2 border-transparent hover:border-primary-400"
+            className="group relative overflow-hidden bg-primary-2000 hover:bg-primary-700 text-white px-10 py-5 text-lg font-bold rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 inline-flex items-center justify-center min-w-[200px] border-2 border-transparent hover:border-primary-400"
             whileHover={{ scale: 1.05, y: -2 }}
             whileTap={{ scale: 0.95 }}
           >
@@ -168,7 +168,7 @@ const Home = () => {
             href="https://youtu.be/RvOuSgVlp9o"
             target="_blank"
             rel="noopener noreferrer"
-            className="group relative overflow-hidden bg-transparent border-2 border-neutral-700 hover:border-red-300 text-neutral-300 hover:text-white px-10 py-5 text-lg font-bold rounded-xl shadow-lg hover:shadow-xl hover:shadow-red-500/30 transition-all duration-300 inline-flex items-center justify-center min-w-[200px] hover:bg-red-600"
+            className="group relative overflow-hidden bg-primary-1000 border-2 border-neutral-700 hover:border-red-300 text-neutral-300 hover:text-white px-10 py-5 text-lg font-bold rounded-xl shadow-lg hover:shadow-xl hover:shadow-red-500/30 transition-all duration-300 inline-flex items-center justify-center min-w-[200px] hover:bg-red-600"
             whileHover={{ scale: 1.05, y: -2 }}
             whileTap={{ scale: 0.95 }}
           >
