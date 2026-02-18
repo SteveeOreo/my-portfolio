@@ -6,7 +6,7 @@ import { ExternalLink, Github, Zap, Users, TrendingUp, Newspaper, Palette, Chevr
 import agrosphereImage from '../../../src/images/Agrosphere.png';
 import redFoxImage from '../../../src/images/RedFoxNewsApp.png';
 import googleSitePortfolioImage from '../../../src/images/GooglesitePortforlio.png';
-import headphonesImage from '../../../src/images/Headphones.png';
+import spOriginalsImage from '../../../src/images/SpOriginals.png';
 
 const Projects = () => {
   const containerVariants = {
@@ -93,15 +93,15 @@ const Projects = () => {
     },
     {
       id: 4,
-      title: "Headphones",
-      description: "Demo headphones platform with interactive cards, navbar, and clean user experience.",
-      image: headphonesImage,
-      tags: ["HTML", "CSS", "JavaScript"],
-      category: "Entertainment Tech",
-      github: "https://github.com/SteveeOreo/alx_html_css/tree/main/headphones",
-      live: "https://steveeoreo.github.io/alx_html_css/headphones/",
+      title: "Sp Originals",
+      description: "Clothing brand website built with react and tailwind css, showcasing the brand's products and has a closet where users can try on clothes before purchasing.",
+      image: spOriginalsImage,
+      tags: ["TailwindCSS", "React", "Vite"],
+      category: "Fashion Tech",
+      github: "https://github.com/SteveeOreo/Sp_Originals",
+      live: "https://my-portfolio-eight-omega-42.vercel.app//",
       highlights: [
-        "Interactivity",
+        "Innovative functionality",
         "Responsiveness",
       ]
     },
