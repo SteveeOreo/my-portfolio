@@ -1,14 +1,18 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { ExternalLink, Github, Zap, Users, TrendingUp, Newspaper, Palette, ChevronRight } from 'lucide-react';
+import React, { useState, useMemo } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { ExternalLink, Github, Zap, Users, TrendingUp, Newspaper, Palette, ChevronRight, Search, X, Filter } from 'lucide-react';
 
 // Import project images
-import agrosphereImage from '../../../src/images/Agrosphere.png';
-import redFoxImage from '../../../src/images/RedFoxNewsApp.png';
-import googleSitePortfolioImage from '../../../src/images/GooglesitePortforlio.png';
-import spOriginalsImage from '../../../src/images/SpOriginals.png';
+import agrosphereImage from '../../images/Agrosphere.png';
+import redFoxImage from '../../images/RedFoxNewsApp.png';
+import googleSitePortfolioImage from '../../images/GooglesitePortforlio.png';
+import spOriginalsImage from '../../images/SpOriginals.png';
+import steveDynamicSketchesImage from '../../images/SteveDynamic.png';
 
 const Projects = () => {
+  const [selectedCategory, setSelectedCategory] = useState('All');
+  const [searchQuery, setSearchQuery] = useState('');
+
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -46,17 +50,17 @@ const Projects = () => {
   const projects = [
     {
       id: 1,
-      title: "Google site Portfolio",
-      description: "My first website built with google site ,showcasing my Bio, project, skills and contact information.",
+      title: "Google Site Portfolio",
+      description: "My first website built with Google Sites, showcasing my bio, projects, skills, and contact information. A zero-code solution demonstrating early web development exploration.",
       image: googleSitePortfolioImage,
-      tags: ["Google sites"],
+      tags: ["Google Sites", "Zero Code", "Web Design"],
       category: "Portfolio",
       github: "https://sites.google.com/view/ekwueme-stephen-chiazam/home",
       live: "https://sites.google.com/view/ekwueme-stephen-chiazam/home",
       highlights: [
-        "Responsiveness",
-        "Zero Code site",
-        "Experimental features"
+        "Fully responsive design",
+        "Zero-code implementation",
+        "Clean and professional layout"
       ]
     },
     {
@@ -94,18 +98,35 @@ const Projects = () => {
     {
       id: 4,
       title: "Sp Originals",
-      description: "Clothing brand website built with react and tailwind css, showcasing the brand's products and has a closet where users can try on clothes before purchasing.",
+      description: "A modern e-commerce platform for a clothing brand, featuring an innovative virtual closet where users can try on clothes before purchasing. Built with React and Tailwind CSS for a seamless shopping experience.",
       image: spOriginalsImage,
-      tags: ["TailwindCSS", "React", "Vite"],
+      tags: ["React", "Tailwind CSS", "Vite", "E-Commerce"],
       category: "Fashion Tech",
       github: "https://github.com/SteveeOreo/Sp_Originals",
-      live: "https://my-portfolio-eight-omega-42.vercel.app//",
+      live: "https://sp-originals.vercel.app/",
       highlights: [
-        "Innovative functionality",
-        "Responsiveness",
+        "Virtual try-on feature",
+        "Fully responsive design",
+        "Modern e-commerce interface"
       ]
     },
-  ];
+    ,
+    {
+      id: 5,
+      title: "Steve Dynamic Sketches and frameworks",
+      description: "A collection of dynamic sketches and frameworks built with React, Tailwind CSS, and Framer Motion. Each sketch is a unique and interactive experience that showcases my skills and creativity.",
+      image: steveDynamicSketchesImage,
+      tags: ["React", "Tailwind CSS", "Dynamic Sketches", "Frameworks"],
+      category: "Architecture",
+      github: "https://github.com/SteveeOreo/Stevesketchbuildings",
+      live: "https://stevesketchbuildings.vercel.app/",
+      highlights: [
+        "Architecture and design",
+        "Interactive and engaging",
+        "Showcases my skills and creativity"
+      ]
+    }
+  ]
 
   const getCategoryIcon = (category) => {
     switch (category) {
@@ -113,11 +134,30 @@ const Projects = () => {
       case "E-Commerce": return <Zap className="w-5 h-5" />;
       case "Media Tech": return <Newspaper className="w-5 h-5" />;
       case "Portfolio": return <Palette className="w-5 h-5" />;
+      case "Fashion Tech": return <Palette className="w-5 h-5" />;
       case "Social Platform": return <Users className="w-5 h-5" />;
       case "Data Visualization": return <TrendingUp className="w-5 h-5" />;
       default: return <Zap className="w-5 h-5" />;
     }
   };
+
+  // Get unique categories
+  const categories = useMemo(() => {
+    const cats = ['All', ...new Set(projects.map(p => p.category))];
+    return cats;
+  }, []);
+
+  // Filter projects based on category and search query
+  const filteredProjects = useMemo(() => {
+    return projects.filter(project => {
+      const matchesCategory = selectedCategory === 'All' || project.category === selectedCategory;
+      const matchesSearch = searchQuery === '' || 
+        project.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        project.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        project.tags.some(tag => tag.toLowerCase().includes(searchQuery.toLowerCase()));
+      return matchesCategory && matchesSearch;
+    });
+  }, [selectedCategory, searchQuery]);
 
   return (
     <section id="projects" className="section-padding bg-gradient-to-b from-neutral-900 to-black">
@@ -129,7 +169,7 @@ const Projects = () => {
         viewport={{ once: true, margin: "-100px" }}
       >
         {/* Section Header */}
-        <motion.div className="text-center mb-16" variants={itemVariants}>
+        <motion.div className="text-center mb-12" variants={itemVariants}>
           <div className="inline-block px-6 py-2 bg-primary-900/30 rounded-full text-primary-400 font-medium text-sm mb-4">
             My Work
           </div>
@@ -143,9 +183,76 @@ const Projects = () => {
           </p>
         </motion.div>
 
+        {/* Search and Filter Section */}
+        <motion.div className="mb-12 space-y-6" variants={itemVariants}>
+          {/* Search Bar */}
+          <div className="relative max-w-2xl mx-auto">
+            <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-neutral-400" />
+            <input
+              type="text"
+              placeholder="Search projects by name, description, or technology..."
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              className="w-full pl-12 pr-12 py-4 bg-neutral-800/50 border border-neutral-700 rounded-xl text-neutral-100 placeholder-neutral-400 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-300"
+              aria-label="Search projects"
+            />
+            {searchQuery && (
+              <button
+                onClick={() => setSearchQuery('')}
+                className="absolute right-4 top-1/2 transform -translate-y-1/2 p-1 rounded-full hover:bg-neutral-700 transition-colors duration-300"
+                aria-label="Clear search"
+              >
+                <X className="w-4 h-4 text-neutral-400" />
+              </button>
+            )}
+          </div>
+
+          {/* Category Filter */}
+          <div className="flex flex-wrap justify-center gap-3">
+            {categories.map((category) => (
+              <motion.button
+                key={category}
+                onClick={() => setSelectedCategory(category)}
+                className={`px-6 py-2 rounded-full font-medium text-sm transition-all duration-300 flex items-center space-x-2 ${
+                  selectedCategory === category
+                    ? 'bg-primary-600 text-white shadow-lg shadow-primary-600/30'
+                    : 'bg-neutral-800/50 text-neutral-300 hover:bg-neutral-700 border border-neutral-700'
+                }`}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                aria-label={`Filter by ${category}`}
+                aria-pressed={selectedCategory === category}
+              >
+                {category !== 'All' && getCategoryIcon(category)}
+                <span>{category}</span>
+              </motion.button>
+            ))}
+          </div>
+
+          {/* Results Count */}
+          {filteredProjects.length !== projects.length && (
+            <motion.p
+              className="text-center text-neutral-400 text-sm"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+            >
+              Showing {filteredProjects.length} of {projects.length} projects
+            </motion.p>
+          )}
+        </motion.div>
+
         {/* Projects Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
-          {projects.map((project) => (
+        <AnimatePresence mode="wait">
+          {filteredProjects.length > 0 ? (
+            <motion.div
+              key="projects-grid"
+              className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8"
+              initial="hidden"
+              animate="visible"
+              exit="hidden"
+              variants={containerVariants}
+            >
+              {filteredProjects.map((project) => (
             <motion.div
               key={project.id}
               className="project-card group bg-neutral-800/50 backdrop-blur-sm rounded-xl overflow-hidden border border-neutral-700/50 hover:border-primary-500/50 shadow-lg hover:shadow-primary-500/20 transition-all duration-300"
@@ -233,6 +340,7 @@ const Projects = () => {
                       className="flex items-center space-x-2 px-4 py-2 bg-neutral-800 hover:bg-neutral-700 text-neutral-300 rounded-lg transition-all duration-300 text-sm font-medium border border-neutral-700 hover:border-neutral-600 shadow-md hover:shadow-lg"
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
+                      aria-label={`View ${project.title} source code on GitHub`}
                     >
                       <Github className="w-4 h-4" />
                       <span>Code</span>
@@ -245,6 +353,7 @@ const Projects = () => {
                       className="flex items-center space-x-2 px-4 py-2 bg-gradient-to-r from-primary-600 to-primary-700 hover:from-primary-500 hover:to-primary-600 text-white rounded-lg transition-all duration-300 text-sm font-medium border border-primary-500 hover:border-primary-400 shadow-md hover:shadow-primary-500/30"
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
+                      aria-label={`View live demo of ${project.title}`}
                     >
                       <ExternalLink className="w-4 h-4" />
                       <span>Demo</span>
@@ -253,8 +362,37 @@ const Projects = () => {
                 </div>
               </motion.div>
             </motion.div>
-          ))}
-        </div>
+              ))}
+            </motion.div>
+          ) : (
+            <motion.div
+              key="no-results"
+              className="text-center py-20"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+            >
+              <div className="inline-block p-6 bg-neutral-800/50 rounded-full mb-4">
+                <Search className="w-12 h-12 text-neutral-400" />
+              </div>
+              <h3 className="text-2xl font-bold text-neutral-300 mb-2">No projects found</h3>
+              <p className="text-neutral-400 mb-6">
+                Try adjusting your search or filter criteria
+              </p>
+              <motion.button
+                onClick={() => {
+                  setSearchQuery('');
+                  setSelectedCategory('All');
+                }}
+                className="px-6 py-3 bg-primary-600 hover:bg-primary-700 text-white rounded-lg transition-colors duration-300"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                Clear Filters
+              </motion.button>
+            </motion.div>
+          )}
+        </AnimatePresence>
 
         {/* View More Section */}
         <motion.div
